@@ -1,0 +1,353 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" modified="2026-08-11T13:43:00.000Z" agent="OpenAI" version="24.7.17" type="device">
+  <diagram id="1---cross-account-overview" name="1 - Cross-Account Overview">
+    <mxGraphModel dx="1600" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" value="" style="" parent="1">
+          <mxGeometry as="geometry" />
+        </mxCell>
+        <mxCell id="1" value="" style="" parent="0">
+          <mxGeometry as="geometry" />
+        </mxCell>
+        <mxCell id="title" value="Spring Boot API Exposure Patterns — Cross-Account Runtime Architecture" style="text;html=1;fontSize=22;fontStyle=1;align=left;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="40" y="20" width="1050" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="a1" value="AWS Account A — AI Platform / Control Plane" style="swimlane;html=1;rounded=1;whiteSpace=wrap;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=1;fontSize=15;startSize=34;" parent="1" vertex="1">
+          <mxGeometry x="40" y="80" width="520" height="900" as="geometry" />
+        </mxCell>
+        <mxCell id="a2" value="AWS Account B — Application / Business Unit" style="swimlane;html=1;rounded=1;whiteSpace=wrap;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=1;fontSize=15;startSize=34;" parent="1" vertex="1">
+          <mxGeometry x="600" y="80" width="1150" height="900" as="geometry" />
+        </mxCell>
+        <mxCell id="cpui" value="Control Plane UI" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="90" y="160" width="170" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="cpapi" value="Control Plane API / Deployment Orchestrator" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="300" y="150" width="210" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="meta" value="Metadata DB / OpenAPI Artifacts" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="190" y="280" width="220" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="rolea" value="Control Plane IAM Role" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="195" y="410" width="210" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="cpnote" value="Control Plane manages lifecycle only.&#10;It is not in the normal tool execution data path." style="shape=note;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="115" y="540" width="330" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=10;" parent="1" edge="1" source="cpui" target="cpapi">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=10;" parent="1" edge="1" source="cpapi" target="meta">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="Deploy / update" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=10;" parent="1" edge="1" source="cpapi" target="rolea">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xrole" value="Cross-Account Deployment Role" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="650" y="150" width="220" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="runtime" value="AgentCore Runtime / Approved Agent Runtime" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="650" y="285" width="230" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="gateway" value="Amazon Bedrock AgentCore Gateway" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontStyle=1;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="970" y="280" width="250" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="idp" value="AgentCore Identity / Credential Providers" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontStyle=1;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="1280" y="160" width="230" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="gwrole" value="Gateway Service / Execution Role" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontStyle=1;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="1280" y="270" width="230" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="t1" value="Target 1&#10;MCP Server Target" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="700" y="465" width="190" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="t2" value="Target 2&#10;OpenAPI Schema Target&#10;(RECOMMENDED)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="960" y="455" width="220" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="t3" value="Target 3&#10;API Gateway REST Target" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="1260" y="465" width="210" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="lattice1" value="VPC Lattice&#10;Private Endpoint" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="700" y="625" width="190" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="lattice2" value="VPC Lattice&#10;Private Endpoint" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="960" y="625" width="220" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="apigw" value="Amazon API Gateway&#10;Regional REST API" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="1260" y="615" width="210" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="vpclink" value="VPC Link / Private Integration" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="1260" y="750" width="210" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="mcpapp" value="Spring Boot + MCP&#10;on EKS" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="700" y="820" width="190" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="alb" value="Internal ALB" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="980" y="735" width="180" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="spring" value="Spring Boot REST API&#10;on Amazon EKS" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="970" y="835" width="210" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="alb3" value="Internal ALB / NLB" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="1275" y="855" width="180" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="spring3" value="Spring Boot REST API&#10;on Amazon EKS" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="1510" y="845" width="190" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="okta" value="Optional Okta Access Gateway&#10;(customer entitlement path)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="1510" y="600" width="190" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="edep" value="Assume role / provision resources" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;dashed=1;fontSize=10;" parent="1" edge="1" source="rolea" target="xrole">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="550" y="440" />
+              <mxPoint x="600" y="440" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edeploy" value="Create/update Gateway, targets, policies" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;dashed=1;fontSize=10;" parent="1" edge="1" source="xrole" target="gateway">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="erun" value="MCP" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=10;" parent="1" edge="1" source="runtime" target="gateway">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eid" value="Auth / credentials" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;dashed=1;fontSize=10;" parent="1" edge="1" source="idp" target="gateway">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="erole" value="IAM permissions" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;dashed=1;fontSize=10;" parent="1" edge="1" source="gwrole" target="gateway">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gt1" value="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=10;" parent="1" edge="1" source="gateway" target="t1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gt2" value="2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=10;" parent="1" edge="1" source="gateway" target="t2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gt3" value="3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=10;" parent="1" edge="1" source="gateway" target="t3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t1lat" value="MCP" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=10;" parent="1" edge="1" source="t1" target="lattice1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="latmcp" value="Private HTTPS" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=10;" parent="1" edge="1" source="lattice1" target="mcpapp">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t2lat" value="HTTP from OpenAPI mapping" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=10;" parent="1" edge="1" source="t2" target="lattice2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lat2alb" value="Private HTTPS" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=10;" parent="1" edge="1" source="lattice2" target="alb">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="albspr" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=10;" parent="1" edge="1" source="alb" target="spring">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t3api" value="IAM / API key" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=10;" parent="1" edge="1" source="t3" target="apigw">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="apiVpc" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=10;" parent="1" edge="1" source="apigw" target="vpclink">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vpalb3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=10;" parent="1" edge="1" source="vpclink" target="alb3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="alb3spr" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=10;" parent="1" edge="1" source="alb3" target="spring3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t2okta" value="2B: OBO / downstream OAuth" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;dashed=1;fontSize=10;" parent="1" edge="1" source="t2" target="okta">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oktaspring" value="Entitlement-approved request" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=10;" parent="1" edge="1" source="okta" target="spring3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="2---pattern-1-mcp-server" name="2 - Pattern 1 MCP Server">
+    <mxGraphModel dx="1600" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="850" math="0" shadow="0">
+      <root>
+        <mxCell id="0" value="" style="" parent="1">
+          <mxGeometry as="geometry" />
+        </mxCell>
+        <mxCell id="1" value="" style="" parent="0">
+          <mxGeometry as="geometry" />
+        </mxCell>
+        <mxCell id="p2title" value="Pattern 1 — Spring Boot as an MCP Server" style="text;html=1;fontSize=22;fontStyle=1;align=left;" parent="1" vertex="1">
+          <mxGeometry x="40" y="20" width="800" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="p2a" value="Application / BU AWS Account" style="swimlane;html=1;rounded=1;whiteSpace=wrap;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=1;fontSize=15;startSize=34;" parent="1" vertex="1">
+          <mxGeometry x="40" y="90" width="1300" height="650" as="geometry" />
+        </mxCell>
+        <mxCell id="p2rt" value="Agent Runtime" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="100" y="220" width="170" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="p2gw" value="AgentCore Gateway" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontStyle=1;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="350" y="210" width="210" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="p2t" value="MCP Server Target" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="640" y="215" width="190" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="p2lat" value="VPC Lattice Private Endpoint" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="910" y="215" width="220" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="p2alb" value="Internal ALB" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="910" y="380" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="p2app" value="Spring Boot MCP Server&#10;Amazon EKS" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="910" y="530" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="p2svc" value="Existing Business Services / Data" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="570" y="535" width="240" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="p2n" value="Use when MCP-native semantics or higher-level tool composition are intentional.&#10;Otherwise this adds protocol ownership to the business application." style="shape=note;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="100" y="430" width="360" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="p2e1" value="MCP" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=10;" parent="1" edge="1" source="p2rt" target="p2gw">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p2e2" value="MCP" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=10;" parent="1" edge="1" source="p2gw" target="p2t">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p2e3" value="Private MCP HTTPS" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=10;" parent="1" edge="1" source="p2t" target="p2lat">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p2e4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=10;" parent="1" edge="1" source="p2lat" target="p2alb">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p2e5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=10;" parent="1" edge="1" source="p2alb" target="p2app">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p2e6" value="Service calls" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=10;" parent="1" edge="1" source="p2app" target="p2svc">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="3---pattern-2-openapi" name="3 - Pattern 2 OpenAPI">
+    <mxGraphModel dx="1600" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="950" math="0" shadow="0">
+      <root>
+        <mxCell id="0" value="" style="" parent="1">
+          <mxGeometry as="geometry" />
+        </mxCell>
+        <mxCell id="1" value="" style="" parent="0">
+          <mxGeometry as="geometry" />
+        </mxCell>
+        <mxCell id="p3title" value="Pattern 2 — Existing Spring REST as OpenAPI Target (Recommended)" style="text;html=1;fontSize=22;fontStyle=1;align=left;" parent="1" vertex="1">
+          <mxGeometry x="40" y="20" width="1100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="p3a" value="Application / BU AWS Account" style="swimlane;html=1;rounded=1;whiteSpace=wrap;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=1;fontSize=15;startSize=34;" parent="1" vertex="1">
+          <mxGeometry x="40" y="90" width="1500" height="760" as="geometry" />
+        </mxCell>
+        <mxCell id="p3rt" value="Agent Runtime" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="90" y="205" width="170" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="p3gw" value="AgentCore Gateway" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontStyle=1;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="350" y="195" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="p3t" value="OpenAPI Schema Target&#10;operationId -&gt; MCP tool" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="660" y="185" width="220" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="p3lat" value="Managed Private Endpoint&#10;Amazon VPC Lattice" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="990" y="180" width="220" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="p3alb" value="Internal ALB" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="1290" y="200" width="170" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="p3spring" value="Spring Boot REST API&#10;Amazon EKS" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="1270" y="370" width="210" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="p3okta" value="Okta Access Gateway&#10;Entitlement Enforcement" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="920" y="550" width="230" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="p3spring2" value="Spring Boot Protected API&#10;Amazon EKS" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="1260" y="555" width="230" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="p3note" value="Direct path: OpenAPI defines the tool contract; VPC Lattice only provides private network connectivity." style="shape=note;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="130" y="390" width="330" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="p3note2" value="Okta variant: use a separate target/security boundary. For OpenAPI targets use OAuth OBO/token exchange when downstream user context is required; raw token passthrough is not supported." style="shape=note;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="500" y="580" width="330" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="p3e1" value="MCP" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=10;" parent="1" edge="1" source="p3rt" target="p3gw">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p3e2" value="Tool selection + MCP-&gt;HTTP" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=10;" parent="1" edge="1" source="p3gw" target="p3t">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p3e3" value="Private HTTPS" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=10;" parent="1" edge="1" source="p3t" target="p3lat">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p3e4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=10;" parent="1" edge="1" source="p3lat" target="p3alb">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p3e5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=10;" parent="1" edge="1" source="p3alb" target="p3spring">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p3e6" value="2B OAuth OBO / token exchange" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;dashed=1;fontSize=10;" parent="1" edge="1" source="p3t" target="p3okta">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p3e7" value="Authorized request" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=10;" parent="1" edge="1" source="p3okta" target="p3spring2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="4---pattern-3-api-gateway" name="4 - Pattern 3 API Gateway">
+    <mxGraphModel dx="1600" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1500" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" value="" style="" parent="1">
+          <mxGeometry as="geometry" />
+        </mxCell>
+        <mxCell id="1" value="" style="" parent="0">
+          <mxGeometry as="geometry" />
+        </mxCell>
+        <mxCell id="p4title" value="Pattern 3 — Amazon API Gateway REST API as AgentCore Target" style="text;html=1;fontSize=22;fontStyle=1;align=left;" parent="1" vertex="1">
+          <mxGeometry x="40" y="20" width="1100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="p4a" value="Application / BU AWS Account — API Gateway and AgentCore Gateway must be same account/Region for native stage target" style="swimlane;html=1;rounded=1;whiteSpace=wrap;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=1;fontSize=15;startSize=34;" parent="1" vertex="1">
+          <mxGeometry x="40" y="90" width="1400" height="700" as="geometry" />
+        </mxCell>
+        <mxCell id="p4rt" value="Agent Runtime" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="90" y="240" width="170" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="p4gw" value="AgentCore Gateway" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontStyle=1;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="350" y="230" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="p4t" value="API Gateway REST Stage Target&#10;Tool filters / overrides" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="650" y="215" width="230" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="p4api" value="Amazon API Gateway&#10;Regional REST API" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="970" y="220" width="220" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="p4vpc" value="VPC Link / Private Integration" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="970" y="405" width="220" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="p4alb" value="Internal ALB / NLB" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="970" y="555" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="p4spring" value="Spring Boot REST API&#10;Amazon EKS" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="970" y="675" width="220" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="p4note" value="Use when API Gateway is required for enterprise API management.&#10;Native target constraints include REST API, same account/Region, and public Regional API Gateway endpoint. Backend integration can remain private." style="shape=note;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="130" y="450" width="430" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="p4e1" value="MCP" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=10;" parent="1" edge="1" source="p4rt" target="p4gw">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p4e2" value="Tool invocation" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=10;" parent="1" edge="1" source="p4gw" target="p4t">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p4e3" value="IAM or API key" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=10;" parent="1" edge="1" source="p4t" target="p4api">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p4e4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=10;" parent="1" edge="1" source="p4api" target="p4vpc">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p4e5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=10;" parent="1" edge="1" source="p4vpc" target="p4alb">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p4e6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;fontSize=10;" parent="1" edge="1" source="p4alb" target="p4spring">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
