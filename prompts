@@ -1,0 +1,73 @@
+From the screenshots, you already have a good **runtime/request-flow view**: HTTP/SSE entry → session/security setup → ADK Runner → root agent → callbacks/guardrails → root-model routing → function tools or `AgentTool`-wrapped sub-agents → result synthesis → SSE response. You also know that clarification and meal-planning are sub-agents, while search, recipe, personalization, cart, guardrail/off-ramp, etc. are primarily direct tools.
+
+To get the **full architecture**, I would ask Claude these questions next. They are intentionally short so you can type them one at a time:
+
+1. **Application architecture**
+   `Explain the overall application architecture. Show major modules/components and their responsibilities.`
+
+2. **Code/repository structure**
+   `Explain the repo structure and identify the main architectural packages/files and how they depend on each other.`
+
+3. **Agent architecture**
+   `List all agents and sub-agents, their purpose, model, tools, inputs/outputs, and how each is invoked.`
+
+4. **Tool architecture**
+   `List every tool, classify it as function tool, AgentTool, MCP/API tool, or other, and show the downstream service it calls.`
+
+5. **External dependencies**
+   `Show all external APIs/services the application calls, including authentication, request format, and purpose.`
+
+6. **State/session/memory**
+   `Explain how session state, conversation history, user preferences, cart state, and long-term memory are stored and passed between agents/tools.`
+
+7. **ADK configuration**
+   `Explain how ADK Runner, root agent, callbacks, AgentTool, sessions, and models are configured and initialized.`
+
+8. **Routing/orchestration**
+   `Explain every routing decision: deterministic routing vs LLM routing vs tool selection vs sub-agent delegation.`
+
+9. **Prompts/configuration**
+   `Show where root-agent and sub-agent prompts, model settings, tool definitions, and environment-specific configuration are maintained.`
+
+10. **Security**
+    `Explain authentication, authorization, identity propagation, secrets, guardrails, and security controls end to end.`
+
+11. **Infrastructure/deployment**
+    `Explain how this application is deployed. Identify GCP services, runtime, networking, load balancing, storage, secrets, and infrastructure configuration.`
+
+12. **Scalability/resilience**
+    `Explain scaling, concurrency, timeouts, retries, circuit breakers, caching, failure handling, and fallback behavior.`
+
+13. **Observability**
+    `Explain logging, tracing, metrics, token/cost tracking, agent/tool observability, and how one request can be traced end to end.`
+
+14. **Testing/evaluation**
+    `Explain unit tests, integration tests, agent evals, prompt evals, tool tests, and how quality is measured before deployment.`
+
+15. **CI/CD**
+    `Explain build, CI/CD, environment promotion, configuration management, and rollback.`
+
+16. **Data flow**
+    `Trace what data is created, read, modified, cached, and persisted during one shopping request.`
+
+17. **Performance**
+    `Identify the major latency contributors and which calls execute sequentially versus concurrently.`
+
+18. **Architecture risks**
+    `Review the architecture and identify coupling, bottlenecks, single points of failure, technical debt, and scalability concerns.`
+
+19. **Architecture diagram**
+    `Create a component diagram showing Client → API → ADK Runner → Root Agent → Sub-agents/Tools → Kroger services → data stores/external systems.`
+
+20. **Deployment diagram**
+    `Create a deployment diagram showing where every component runs and the network/runtime boundaries between them.`
+
+### One final question I would definitely ask
+
+After Claude has answered the above, ask:
+
+`Using everything you learned from this repository, give me a complete architecture review. Cover request flow, components, root agent, sub-agents, tools, models, prompts, session/state/memory, external integrations, data stores, security, infrastructure, deployment, networking, observability, scaling, resilience, CI/CD, testing/evals, and major architectural risks. Separate what is confirmed from code versus inferred. Include component, request-flow, and deployment diagrams.`
+
+That last sentence — **“separate what is confirmed from code versus inferred”** — is important. It prevents Claude from quietly filling architectural gaps with assumptions.
+
+Once you have those Claude responses, send them to me. I can consolidate them into a **single architectural analysis of the Kroger Shopping Assistant**, including the current-state architecture, end-to-end request sequence, agent/sub-agent hierarchy, tool/integration map, GCP deployment view, and areas I would question or redesign from a Vertex AI / Gemini Enterprise Agent Platform perspective.
