@@ -1,0 +1,39 @@
+flowchart TD
+    A["Select agent version and Promote"]
+    B["Resolve next allowed environment"]
+    C["Collect declared dependencies"]
+    D["Discover destination resources"]
+    E{"Compatible resource available?"}
+    F["Prepopulate existing binding"]
+    G["Enter creation details or request provisioning"]
+    H["Review complete promotion plan"]
+    I{"Pre-deployment checks pass?"}
+    J["Submit and approve plan"]
+    K["Ready for authorized deployer"]
+    Q{"Production destination?"}
+    L["Prod Deployer provides Ctask; validate ServiceNow gate"]
+    U["Validate UAT deployment authorization"]
+    M["Recheck approved plan and execute deployment"]
+    N{"Post-deployment checks pass?"}
+    O["Activate and record success"]
+    P["Record failure and recover"]
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E -->|Yes| F
+    E -->|No| G
+    F --> H
+    G --> H
+    H --> I
+    I -->|No: revise| H
+    I -->|Yes| J
+    J --> K
+    K --> Q
+    Q -->|Yes| L
+    Q -->|No: UAT| U
+    L -->|Valid| M
+    U -->|Authorized| M
+    M --> N
+    N -->|Yes| O
+    N -->|No| P
