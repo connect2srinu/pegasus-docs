@@ -1,0 +1,400 @@
+<mxfile host="app.diagrams.net" agent="ChatGPT" pages="4">
+  <diagram id="p1" name="1 - Current Connectivity">
+    <mxGraphModel dx="1700" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1700" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="t1" value="Current Guardian Identity Connectivity — Multiple Entitlements, One Shared Entra Enterprise App" style="text;html=1;strokeColor=none;fillColor=none;fontSize=22;fontStyle=1;align=left" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="1150" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="laneS1" value="SailPoint" style="swimlane;html=1;horizontal=0;startSize=34;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=15" vertex="1" parent="1">
+          <mxGeometry x="40" y="90" width="290" height="720" as="geometry" />
+        </mxCell>
+        <mxCell id="laneA1" value="Active Directory" style="swimlane;html=1;horizontal=0;startSize=34;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=15" vertex="1" parent="1">
+          <mxGeometry x="330" y="90" width="290" height="720" as="geometry" />
+        </mxCell>
+        <mxCell id="laneE1" value="Microsoft Entra" style="swimlane;html=1;horizontal=0;startSize=34;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1;fontSize=15" vertex="1" parent="1">
+          <mxGeometry x="620" y="90" width="440" height="720" as="geometry" />
+        </mxCell>
+        <mxCell id="laneC1" value="Guardian Control Plane" style="swimlane;html=1;horizontal=0;startSize=34;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1;fontSize=15" vertex="1" parent="1">
+          <mxGeometry x="1060" y="90" width="330" height="720" as="geometry" />
+        </mxCell>
+        <mxCell id="laneR1" value="Protected Resources" style="swimlane;html=1;horizontal=0;startSize=34;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=1;fontSize=15" vertex="1" parent="1">
+          <mxGeometry x="1390" y="90" width="260" height="720" as="geometry" />
+        </mxCell>
+        <mxCell id="sp11" value="SailPoint Role A&#xa;Toolkit A Users" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13" vertex="1" parent="1">
+          <mxGeometry x="75" y="150" width="205" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="sp12" value="SailPoint Role B&#xa;Toolkit B Users" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13" vertex="1" parent="1">
+          <mxGeometry x="75" y="290" width="205" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="sp13" value="SailPoint Role C&#xa;Toolkit C Users" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13" vertex="1" parent="1">
+          <mxGeometry x="75" y="430" width="205" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="sp14" value="SailPoint Role D&#xa;Agent D Users" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13" vertex="1" parent="1">
+          <mxGeometry x="75" y="570" width="205" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="ad11" value="AD Group A" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13" vertex="1" parent="1">
+          <mxGeometry x="375" y="150" width="195" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="ad12" value="AD Group B" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13" vertex="1" parent="1">
+          <mxGeometry x="375" y="290" width="195" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="ad13" value="AD Group C" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13" vertex="1" parent="1">
+          <mxGeometry x="375" y="430" width="195" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="ad14" value="AD Group D" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13" vertex="1" parent="1">
+          <mxGeometry x="375" y="570" width="195" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="eg11" value="Entra Group A" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13" vertex="1" parent="1">
+          <mxGeometry x="660" y="150" width="175" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="eg12" value="Entra Group B" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13" vertex="1" parent="1">
+          <mxGeometry x="660" y="290" width="175" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="eg13" value="Entra Group C" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13" vertex="1" parent="1">
+          <mxGeometry x="660" y="430" width="175" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="eg14" value="Entra Group D" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13" vertex="1" parent="1">
+          <mxGeometry x="660" y="570" width="175" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="app1" value="Shared Entra&#xa;Enterprise App&#xa;&#xa;Guardian AI&#xa;Control Plane" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="880" y="300" width="145" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="cp1" value="OIDC Authentication&#xa;+&#xa;Resource Authorization&#xa;&#xa;Checks required Entra Group Object ID" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=13;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="1115" y="305" width="220" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="r11" value="Toolkit / Gateway A&#xa;Requires Group A" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13" vertex="1" parent="1">
+          <mxGeometry x="1430" y="150" width="180" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="r12" value="Toolkit / Gateway B&#xa;Requires Group B" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13" vertex="1" parent="1">
+          <mxGeometry x="1430" y="290" width="180" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="r13" value="Toolkit / Gateway C&#xa;Requires Group C" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13" vertex="1" parent="1">
+          <mxGeometry x="1430" y="430" width="180" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="r14" value="Agent D&#xa;Requires Group D" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13" vertex="1" parent="1">
+          <mxGeometry x="1430" y="570" width="180" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="n1" value="Key Pattern: multiple SailPoint roles → multiple AD groups → multiple Entra groups → ONE shared Entra Enterprise App. The Control Plane performs resource-level authorization using group membership." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=13;align=left;spacingLeft=8" vertex="1" parent="1">
+          <mxGeometry x="75" y="690" width="1480" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="e111" edge="1" parent="1" source="sp11" target="ad11" style="endArrow=block;html=1;strokeWidth=2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e112" edge="1" parent="1" source="sp12" target="ad12" style="endArrow=block;html=1;strokeWidth=2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e113" edge="1" parent="1" source="sp13" target="ad13" style="endArrow=block;html=1;strokeWidth=2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e114" edge="1" parent="1" source="sp14" target="ad14" style="endArrow=block;html=1;strokeWidth=2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e121" value="sync" edge="1" parent="1" source="ad11" target="eg11" style="endArrow=block;html=1;strokeWidth=2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e122" value="sync" edge="1" parent="1" source="ad12" target="eg12" style="endArrow=block;html=1;strokeWidth=2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e123" value="sync" edge="1" parent="1" source="ad13" target="eg13" style="endArrow=block;html=1;strokeWidth=2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e124" value="sync" edge="1" parent="1" source="ad14" target="eg14" style="endArrow=block;html=1;strokeWidth=2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e131" edge="1" parent="1" source="eg11" target="app1" style="endArrow=block;html=1;strokeWidth=2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e132" edge="1" parent="1" source="eg12" target="app1" style="endArrow=block;html=1;strokeWidth=2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e133" edge="1" parent="1" source="eg13" target="app1" style="endArrow=block;html=1;strokeWidth=2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e134" edge="1" parent="1" source="eg14" target="app1" style="endArrow=block;html=1;strokeWidth=2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e14" value="OIDC / group claims" edge="1" parent="1" source="app1" target="cp1" style="endArrow=block;html=1;strokeWidth=2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e151" edge="1" parent="1" source="cp1" target="r11" style="endArrow=block;html=1;strokeWidth=2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e152" edge="1" parent="1" source="cp1" target="r12" style="endArrow=block;html=1;strokeWidth=2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e153" edge="1" parent="1" source="cp1" target="r13" style="endArrow=block;html=1;strokeWidth=2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e154" edge="1" parent="1" source="cp1" target="r14" style="endArrow=block;html=1;strokeWidth=2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="p2" name="2 - Existing AD Group">
+    <mxGraphModel dx="1700" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1700" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="t2" value="Toolkit / AgentCore Gateway Creation — Existing AD Group Available" style="text;html=1;strokeColor=none;fillColor=none;fontSize=22;fontStyle=1;align=left" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="950" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="uL2" value="User / Developer" style="swimlane;html=1;horizontal=0;startSize=34;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="40" y="90" width="300" height="760" as="geometry" />
+        </mxCell>
+        <mxCell id="cL2" value="Guardian Control Plane" style="swimlane;html=1;horizontal=0;startSize=34;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="340" y="90" width="430" height="760" as="geometry" />
+        </mxCell>
+        <mxCell id="aL2" value="Active Directory" style="swimlane;html=1;horizontal=0;startSize=34;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="770" y="90" width="280" height="760" as="geometry" />
+        </mxCell>
+        <mxCell id="eL2" value="Microsoft Entra" style="swimlane;html=1;horizontal=0;startSize=34;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="1050" y="90" width="340" height="760" as="geometry" />
+        </mxCell>
+        <mxCell id="rL2" value="AgentCore Gateway / Toolkit" style="swimlane;html=1;horizontal=0;startSize=34;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="1390" y="90" width="260" height="760" as="geometry" />
+        </mxCell>
+        <mxCell id="u21" value="Create Toolkit / Gateway" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13" vertex="1" parent="1">
+          <mxGeometry x="85" y="160" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="c21" value="Choose Security Model&#xa;Protect with Existing AD Group" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=13" vertex="1" parent="1">
+          <mxGeometry x="410" y="160" width="260" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="a21" value="Search / Select Existing AD Group" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13" vertex="1" parent="1">
+          <mxGeometry x="810" y="280" width="200" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="c22" value="Resolve AD Group → Entra Group Mapping" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=13" vertex="1" parent="1">
+          <mxGeometry x="410" y="395" width="260" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="e21" value="Find Matching Entra Group&#xa;Capture immutable Group Object ID" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13" vertex="1" parent="1">
+          <mxGeometry x="1110" y="395" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="e22" value="Ensure Group is associated with Shared Enterprise App&#xa;(if required by chosen Entra configuration)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=13" vertex="1" parent="1">
+          <mxGeometry x="1090" y="520" width="260" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="c23" value="Store Authorization Mapping&#xa;Toolkit ID + AD Group + Entra Group Object ID" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=13" vertex="1" parent="1">
+          <mxGeometry x="410" y="640" width="290" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="r21" value="Create / Register Toolkit&#xa;Access protected by required Entra group" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13" vertex="1" parent="1">
+          <mxGeometry x="1425" y="640" width="190" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="x21" edge="1" parent="1" source="u21" target="c21" style="endArrow=block;html=1;strokeWidth=2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="x22" value="select group" edge="1" parent="1" source="c21" target="a21" style="endArrow=block;html=1;strokeWidth=2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="x23" edge="1" parent="1" source="a21" target="c22" style="endArrow=block;html=1;strokeWidth=2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="x24" edge="1" parent="1" source="c22" target="e21" style="endArrow=block;html=1;strokeWidth=2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="x25" edge="1" parent="1" source="e21" target="e22" style="endArrow=block;html=1;strokeWidth=2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="x26" edge="1" parent="1" source="e22" target="c23" style="endArrow=block;html=1;strokeWidth=2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="x27" edge="1" parent="1" source="c23" target="r21" style="endArrow=block;html=1;strokeWidth=2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="p3" name="3 - New AD Group Needed">
+    <mxGraphModel dx="1700" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1700" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="t3" value="Toolkit / AgentCore Gateway Creation — No Suitable AD Group Exists" style="text;html=1;strokeColor=none;fillColor=none;fontSize=22;fontStyle=1;align=left" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="1000" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="uL3" value="User / Developer" style="swimlane;html=1;horizontal=0;startSize=34;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="40" y="90" width="260" height="780" as="geometry" />
+        </mxCell>
+        <mxCell id="sL3" value="SailPoint" style="swimlane;html=1;horizontal=0;startSize=34;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="300" y="90" width="300" height="780" as="geometry" />
+        </mxCell>
+        <mxCell id="aL3" value="Active Directory" style="swimlane;html=1;horizontal=0;startSize=34;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="600" y="90" width="260" height="780" as="geometry" />
+        </mxCell>
+        <mxCell id="eL3" value="Microsoft Entra" style="swimlane;html=1;horizontal=0;startSize=34;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="860" y="90" width="280" height="780" as="geometry" />
+        </mxCell>
+        <mxCell id="cL3" value="Guardian Control Plane" style="swimlane;html=1;horizontal=0;startSize=34;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="1140" y="90" width="300" height="780" as="geometry" />
+        </mxCell>
+        <mxCell id="rL3" value="Toolkit / Gateway" style="swimlane;html=1;horizontal=0;startSize=34;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="1440" y="90" width="210" height="780" as="geometry" />
+        </mxCell>
+        <mxCell id="u31" value="Need new toolkit but no suitable AD group exists" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13" vertex="1" parent="1">
+          <mxGeometry x="70" y="150" width="190" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="s31" value="Step 0&#xa;Submit SailPoint Intake Form" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="350" y="150" width="200" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="s32" value="Create / Configure SailPoint Role or Entitlement" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13" vertex="1" parent="1">
+          <mxGeometry x="350" y="285" width="200" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="a31" value="Create / Associate New AD Group" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13" vertex="1" parent="1">
+          <mxGeometry x="630" y="285" width="190" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="e31" value="AD Group Synchronizes to Matching Entra Group" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13" vertex="1" parent="1">
+          <mxGeometry x="900" y="410" width="200" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="u32" value="Entitlement ready&#xa;Return to Control Plane" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13" vertex="1" parent="1">
+          <mxGeometry x="70" y="525" width="190" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="c31" value="Step 1&#xa;Create Toolkit / Gateway" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=13;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="1190" y="525" width="200" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="c32" value="Select newly created AD Group&#xa;Resolve Entra Group Object ID&#xa;Store authorization mapping" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=13" vertex="1" parent="1">
+          <mxGeometry x="1175" y="650" width="230" height="105" as="geometry" />
+        </mxCell>
+        <mxCell id="r31" value="Toolkit / Gateway Created&#xa;Protected by new Entra group" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13" vertex="1" parent="1">
+          <mxGeometry x="1460" y="650" width="170" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="x31" edge="1" parent="1" source="u31" target="s31" style="endArrow=block;html=1;strokeWidth=2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="x32" edge="1" parent="1" source="s31" target="s32" style="endArrow=block;html=1;strokeWidth=2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="x33" edge="1" parent="1" source="s32" target="a31" style="endArrow=block;html=1;strokeWidth=2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="x34" value="sync" edge="1" parent="1" source="a31" target="e31" style="endArrow=block;html=1;strokeWidth=2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="x35" edge="1" parent="1" source="e31" target="u32" style="endArrow=block;html=1;strokeWidth=2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="980" y="565" />
+              <mxPoint x="260" y="565" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="x36" edge="1" parent="1" source="u32" target="c31" style="endArrow=block;html=1;strokeWidth=2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="x37" edge="1" parent="1" source="c31" target="c32" style="endArrow=block;html=1;strokeWidth=2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="x38" edge="1" parent="1" source="c32" target="r31" style="endArrow=block;html=1;strokeWidth=2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="p4" name="4 - End User Access Request">
+    <mxGraphModel dx="1952" dy="865" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1700" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="t4" parent="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=22;fontStyle=1;align=left" value="End-User Access Request Flow — SailPoint Role Assignment Controls Runtime Access" vertex="1">
+          <mxGeometry height="40" width="1150" x="40" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="uL4" parent="1" style="swimlane;html=1;horizontal=0;startSize=34;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1" value="End User" vertex="1">
+          <mxGeometry height="780" width="250" x="40" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="sL4" parent="1" style="swimlane;html=1;horizontal=0;startSize=34;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1" value="SailPoint" vertex="1">
+          <mxGeometry height="780" width="360" x="290" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="aL4" parent="1" style="swimlane;html=1;horizontal=0;startSize=34;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1" value="Active Directory" vertex="1">
+          <mxGeometry height="780" width="260" x="650" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="x47" edge="1" parent="aL4" style="endArrow=block;html=1;strokeWidth=2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="390" y="440" />
+              <mxPoint x="-395" y="465" />
+            </Array>
+            <mxPoint x="398.3928571428569" y="370" as="sourcePoint" />
+            <mxPoint x="-395" y="465" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eL4" parent="1" style="swimlane;html=1;horizontal=0;startSize=34;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1" value="Microsoft Entra" vertex="1">
+          <mxGeometry height="780" width="280" x="910" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="cL4" parent="1" style="swimlane;html=1;horizontal=0;startSize=34;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1" value="Guardian Control Plane" vertex="1">
+          <mxGeometry height="780" width="300" x="1190" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="rL4" parent="1" style="swimlane;html=1;horizontal=0;startSize=34;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=1" value="Toolkit / Gateway" vertex="1">
+          <mxGeometry height="780" width="170" x="1490" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="u41" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13" value="User needs access to protected Toolkit / Gateway" vertex="1">
+          <mxGeometry height="80" width="185" x="70" y="145" as="geometry" />
+        </mxCell>
+        <mxCell id="s41" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13" value="Submit SailPoint Request&#xa;for Required SailPoint Role" vertex="1">
+          <mxGeometry height="80" width="225" x="355" y="145" as="geometry" />
+        </mxCell>
+        <mxCell id="s42" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13" value="Approval Step 1" vertex="1">
+          <mxGeometry height="85" width="120" x="365" y="275" as="geometry" />
+        </mxCell>
+        <mxCell id="s43" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13" value="Approval Step 2" vertex="1">
+          <mxGeometry height="85" width="120" x="500" y="275" as="geometry" />
+        </mxCell>
+        <mxCell id="s44" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13;fontStyle=1" value="SailPoint Role Assignment Completed" vertex="1">
+          <mxGeometry height="80" width="225" x="355" y="405" as="geometry" />
+        </mxCell>
+        <mxCell id="a41" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13" value="User Added to Corresponding AD Security Group" vertex="1">
+          <mxGeometry height="80" width="190" x="685" y="405" as="geometry" />
+        </mxCell>
+        <mxCell id="e41" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13" value="~10 Minute Sync&#xa;AD membership reflected in matching Entra Group" vertex="1">
+          <mxGeometry height="90" width="210" x="945" y="405" as="geometry" />
+        </mxCell>
+        <mxCell id="u42" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13" value="User Signs In / Refreshes Authentication" vertex="1">
+          <mxGeometry height="80" width="185" x="70" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="e42" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13" value="OIDC Identity Contains Relevant Entra Group Membership" vertex="1">
+          <mxGeometry height="90" width="210" x="945" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="c41" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=13;fontStyle=1" value="Runtime Authorization Check&#xa;&#xa;Does user identity contain the Entra Group Object ID required by this resource?" vertex="1">
+          <mxGeometry height="110" width="230" x="1225" y="545" as="geometry" />
+        </mxCell>
+        <mxCell id="r41" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13;fontStyle=1" value="YES&#xa;Access Allowed" vertex="1">
+          <mxGeometry height="75" width="130" x="1510" y="525" as="geometry" />
+        </mxCell>
+        <mxCell id="r42" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=13;fontStyle=1" value="NO&#xa;Security / Access Exception" vertex="1">
+          <mxGeometry height="85" width="130" x="1510" y="650" as="geometry" />
+        </mxCell>
+        <mxCell id="n4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=13;align=left;spacingLeft=8" value="Important: without the required SailPoint role assignment, the user is not provisioned into the corresponding AD / Entra group. The runtime group check therefore fails and access to the toolkit / gateway is denied." vertex="1">
+          <mxGeometry height="75" width="1360" x="70" y="735" as="geometry" />
+        </mxCell>
+        <mxCell id="x41" edge="1" parent="1" source="u41" style="endArrow=block;html=1;strokeWidth=2" target="s41">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="x42" edge="1" parent="1" source="s41" style="endArrow=block;html=1;strokeWidth=2" target="s42">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="x43" edge="1" parent="1" source="s42" style="endArrow=block;html=1;strokeWidth=2" target="s43" value="approved">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="x44" edge="1" parent="1" source="s43" style="endArrow=block;html=1;strokeWidth=2" target="s44" value="approved">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="x45" edge="1" parent="1" source="s44" style="endArrow=block;html=1;strokeWidth=2" target="a41">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="x46" edge="1" parent="1" source="a41" style="endArrow=block;html=1;strokeWidth=2" target="e41" value="sync">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="x48" edge="1" parent="1" source="u42" style="endArrow=block;html=1;strokeWidth=2" target="e42">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="x49" edge="1" parent="1" source="e42" style="endArrow=block;html=1;strokeWidth=2" target="c41">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="x410" edge="1" parent="1" source="c41" style="endArrow=block;html=1;strokeWidth=2" target="r41" value="group match">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="x411" edge="1" parent="1" source="c41" style="endArrow=block;html=1;strokeWidth=2" target="r42" value="group missing">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
