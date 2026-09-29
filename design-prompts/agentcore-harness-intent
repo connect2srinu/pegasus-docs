@@ -1,0 +1,262 @@
+I want to start a new feature using our existing design-folder-driven SDLC.
+
+Before creating anything, inspect the current repository/workspace instructions and
+determine exactly how Intent-stage artifacts are expected to be created.
+
+Please inspect:
+
+- AGENTS.md at the workspace/repository level
+- .claude/skills/design-start-feature
+- any intent.md template used by the skill
+- existing feature design folders containing intent.md
+- any hooks or generated-file rules related to Intent
+- our recently added API-only / UI-only / cross-repository feature-scope rules
+
+Do NOT invent a new Intent format.
+
+Follow the existing Intent workflow and conventions already defined in the repositories.
+
+Feature request
+===============
+
+Feature name:
+
+AgentCore Toolkit Target Entra Group Protection
+
+Background
+----------
+
+The Guardian AI Control Plane has the following hierarchy:
+
+Organization
+  -> Project
+      -> Agent
+
+Users can create agents within a project.
+
+We are using AWS AgentCore Harness v2 for agent runtime/deployment.
+
+An Agent can be assigned one or more Toolkits.
+
+A Toolkit is our Control Plane abstraction for an AWS AgentCore Gateway.
+
+A Toolkit / AgentCore Gateway can contain multiple targets.
+
+Feature behavior
+----------------
+
+When a user creates or configures a target inside a Toolkit / AgentCore Gateway,
+the user must be able to select the Microsoft Entra group that should be associated
+with/protect access to that target.
+
+Conceptually:
+
+Project
+  -> Agent
+      -> Toolkit
+          -> AgentCore Gateway
+              -> Target
+                  -> selected Entra Group
+
+The user creating the Toolkit target selects an approved Entra group.
+
+The Control Plane must retain that selected Entra group configuration as part of
+the target configuration.
+
+When the AgentCore Harness / Toolkit infrastructure is provisioned or updated,
+the platform must use the saved identity/access configuration when configuring
+the AgentCore target and its security integration.
+
+Important intent-level requirement:
+
+The Intent should capture WHAT capability we are introducing and WHY.
+
+Do not prematurely decide HOW Entra authentication/authorization is technically
+implemented inside AgentCore.
+
+For example, do not assume in intent.md:
+- whether an Entra App Registration is created per Gateway or per Target
+- whether group information becomes a token claim, policy, scope, or another
+  AgentCore authorization configuration
+- the exact AWS resource implementation
+- the exact database schema
+
+Those are Design-stage questions.
+
+Business/platform objective
+---------------------------
+
+Agent teams should not have to manually configure identity protection for Toolkit
+targets outside the Control Plane.
+
+The Control Plane should provide a governed way to associate an approved Entra
+group with a Toolkit target and carry that identity configuration into the managed
+AgentCore deployment lifecycle.
+
+Expected capabilities
+---------------------
+
+At a high level, the feature should support:
+
+1. A user creating/configuring a Toolkit target can select an approved Entra group.
+
+2. The selected group is stored as part of the Control Plane-managed target
+   configuration.
+
+3. The configuration remains associated with the correct:
+   - Organization
+   - Project
+   - Toolkit
+   - Gateway
+   - Target
+
+4. The selected identity configuration is supplied to the AgentCore deployment /
+   update workflow.
+
+5. Existing authorization and ownership boundaries must be respected.
+
+6. The configuration should be available for lifecycle operations such as:
+   - create
+   - update
+   - redeploy
+   - future environment promotion
+
+7. The feature should maintain sufficient auditability to determine which Entra
+   group was selected for a target and when the configuration changed.
+
+Feature Scope
+=============
+
+Please determine the scope using our existing scope-classification rules.
+
+My expectation is that this is Cross-repository because:
+
+UI responsibilities likely include:
+- displaying/selecting approved Entra groups while creating/editing a Toolkit target
+- displaying the selected protection configuration
+- sending the selection through the API contract
+- validation/error handling
+
+API responsibilities likely include:
+- accepting the target identity configuration
+- validating authorization/context
+- persisting the selected Entra group relationship/reference
+- exposing it through Toolkit/Target APIs
+- supplying the configuration to the AgentCore provisioning lifecycle
+- audit/lifecycle behavior
+
+However, verify this against the actual repositories before finalizing the
+Feature-Scope classification.
+
+Do not assume these exact implementation responsibilities if the existing code
+shows a different boundary.
+
+Out of scope for this Intent
+============================
+
+Unless the existing Intent process requires otherwise, consider these outside the
+initial feature boundary:
+
+- requesting membership in the selected Entra group
+- SailPoint entitlement approval workflow
+- directly adding users to Entra groups
+- creating arbitrary Entra groups from this feature
+- redesigning the entire Toolkit/Gateway lifecycle
+- agent business logic
+- tool implementation
+- environment-promotion implementation itself
+
+The design may identify dependencies on these capabilities, but they should not
+automatically become part of this feature.
+
+Design-shaping questions to preserve
+====================================
+
+Do not answer these inside intent.md unless the existing Intent workflow explicitly
+requires the answer.
+
+Capture them for the subsequent design-session where appropriate:
+
+1. Is the Entra group associated with the Toolkit target, Gateway, or another
+   security-policy entity?
+
+2. Can different targets within the same Gateway use different Entra groups?
+
+3. Can one target reference multiple Entra groups, or exactly one?
+
+4. Where does the list of selectable Entra groups come from?
+
+5. Are users allowed to select any discovered Entra group or only groups approved
+   for the Organization/Project?
+
+6. What stable identifier should be stored for the Entra group?
+
+7. How is the selected group translated into the AgentCore security/authentication
+   configuration?
+
+8. What happens when the selected Entra group is deleted, renamed, disabled, or
+   otherwise becomes invalid?
+
+9. What happens when the group selection changes after the target has already
+   been deployed?
+
+10. How does this configuration behave during future Dev -> UAT -> Prod promotion?
+
+11. Does each Toolkit/Gateway have an associated Entra application, and how does
+    the target-level group selection relate to that application?
+
+12. What audit information must be captured?
+
+Execution instructions
+======================
+
+Use our existing /design-start-feature behavior.
+
+Please:
+
+1. Inspect the existing Intent process first.
+
+2. Classify this feature using our current:
+   - API-only
+   - UI-only
+   - Cross-repository
+   model.
+
+3. Determine an appropriate stable Feature-ID using the existing naming convention.
+
+4. Identify affected repositories.
+
+5. Determine where the authoritative intent.md should live according to our current
+   cross-repository process.
+
+6. If our current process calls for a shared contract.md for UI/API features,
+   indicate that it will likely be needed, but DO NOT create detailed contract/design
+   content during Intent unless our existing workflow requires it.
+
+7. Produce the proposed intent.md using the EXACT structure/style expected by our
+   existing design-start-feature skill and current examples.
+
+8. Keep intent.md concise and Intent-level.
+   Do not turn it into design.md.
+
+9. Do not create ADRs.
+
+10. Do not create design.md yet.
+
+11. Do not implement code.
+
+12. Do not change UI or API contracts yet.
+
+13. Do not create branches or PRs until the point at which our existing
+    design-start-feature process says they should be created.
+
+Before writing files, show me:
+
+- detected Feature-ID
+- detected Feature-Scope
+- affected repositories
+- intended authoritative intent location
+- any significant mismatch between my requirement and the current SDLC rules
+- the proposed intent.md content
+
+Wait for my approval before writing the feature artifacts.
