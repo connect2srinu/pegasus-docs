@@ -1,0 +1,289 @@
+<mxfile host="app.diagrams.net" agent="ChatGPT" pages="4">
+  <diagram id="page0" name="1 Direct - AgentCore Graviton">
+    <mxGraphModel dx="1529" dy="677" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1500" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="cp" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f3e8ff;strokeColor=#64748b;fontColor=#172b4d;fontSize=14;align=center;verticalAlign=middle;spacing=8;" value="Guardian Control Plane&lt;br&gt;Approve capability / provision role" vertex="1">
+          <mxGeometry height="75" width="250" x="40" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="u" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#64748b;fontColor=#172b4d;fontSize=14;align=center;verticalAlign=middle;spacing=8;" value="User / Application" vertex="1">
+          <mxGeometry height="70" width="210" x="40" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="a" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#64748b;fontColor=#172b4d;fontSize=14;align=center;verticalAlign=middle;spacing=8;" value="AgentCore Runtime&lt;br&gt;Graviton ARM64 Harness&lt;br&gt;LLM + Playwright adapter" vertex="1">
+          <mxGeometry height="90" width="290" x="355" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="r" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fef3c7;strokeColor=#64748b;fontColor=#172b4d;fontSize=14;align=center;verticalAlign=middle;spacing=8;" value="Control Plane&lt;br&gt;Execution Agent IAM Role" vertex="1">
+          <mxGeometry height="80" width="260" x="365" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="b" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dcfce7;strokeColor=#64748b;fontColor=#172b4d;fontSize=14;align=center;verticalAlign=middle;spacing=8;" value="AWS-managed AgentCore Browser&lt;br&gt;aws.browser.v1" vertex="1">
+          <mxGeometry height="90" width="290" x="755" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="w" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#64748b;fontColor=#172b4d;fontSize=14;align=center;verticalAlign=middle;spacing=8;" value="External Website" vertex="1">
+          <mxGeometry height="70" width="220" x="1140" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="obs" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f3e8ff;strokeColor=#64748b;fontColor=#172b4d;fontSize=14;align=center;verticalAlign=middle;spacing=8;" value="Screenshot / DOM / result&lt;br&gt;returned to agent" vertex="1">
+          <mxGeometry height="70" width="280" x="760" y="470" as="geometry" />
+        </mxCell>
+        <mxCell id="e0" edge="1" parent="1" source="cp" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#475569;fontSize=12;labelBackgroundColor=#ffffff;" target="r" value="Provisions scoped IAM">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="cp" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#475569;fontSize=12;labelBackgroundColor=#ffffff;" target="a" value="Enable Browser tool">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="u" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#475569;fontSize=12;labelBackgroundColor=#ffffff;" target="a" value="User request">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="r" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#475569;fontSize=12;labelBackgroundColor=#ffffff;" target="a" value="Runtime credentials">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="a" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#475569;fontSize=12;labelBackgroundColor=#ffffff;" target="b" value="Start / Connect / Automate / Stop">
+          <mxGeometry relative="1" y="25" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="b" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#475569;fontSize=12;labelBackgroundColor=#ffffff;" target="w" value="Navigate / click / type">
+          <mxGeometry relative="1" x="0.3684" y="-45" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="w" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#475569;fontSize=12;labelBackgroundColor=#ffffff;" target="b" value="Page response">
+          <mxGeometry relative="1" x="0.0526" y="-45" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="b" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#475569;fontSize=12;labelBackgroundColor=#ffffff;" target="obs" value="Observation">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="obs" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#475569;fontSize=12;labelBackgroundColor=#ffffff;" target="a" value="Tool result">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="n0" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff7ed;strokeColor=#fdba74;fontColor=#7c2d12;fontSize=12;align=left;spacing=10;" value="Browser is managed outside the ARM64 container. LLM chooses actions; the Harness adapter executes Browser APIs." vertex="1">
+          <mxGeometry height="70" width="690" x="355" y="610" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="page1" name="2 Gateway + Adapter">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="1500" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="u" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#64748b;fontColor=#172b4d;fontSize=14;align=center;verticalAlign=middle;spacing=8;" value="AgentCore Runtime / Agent" vertex="1">
+          <mxGeometry height="80" width="240" x="40" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="g" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f3e8ff;strokeColor=#64748b;fontColor=#172b4d;fontSize=14;align=center;verticalAlign=middle;spacing=8;" value="AgentCore Gateway&lt;br&gt;Tool routing + authorization" vertex="1">
+          <mxGeometry height="80" width="260" x="360" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="l" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fef3c7;strokeColor=#64748b;fontColor=#172b4d;fontSize=14;align=center;verticalAlign=middle;spacing=8;" value="Lambda / MCP Browser Adapter&lt;br&gt;Executes Browser API" vertex="1">
+          <mxGeometry height="80" width="285" x="700" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="b" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dcfce7;strokeColor=#64748b;fontColor=#172b4d;fontSize=14;align=center;verticalAlign=middle;spacing=8;" value="AgentCore Browser&lt;br&gt;aws.browser.v1" vertex="1">
+          <mxGeometry height="80" width="250" x="1090" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="gr" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fef3c7;strokeColor=#64748b;fontColor=#172b4d;fontSize=14;align=center;verticalAlign=middle;spacing=8;" value="Execution Gateway Role&lt;br&gt;Target invocation permission" vertex="1">
+          <mxGeometry height="80" width="250" x="370" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="lr" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fef3c7;strokeColor=#64748b;fontColor=#172b4d;fontSize=14;align=center;verticalAlign=middle;spacing=8;" value="Adapter Execution IAM Role&lt;br&gt;Browser session permissions" vertex="1">
+          <mxGeometry height="80" width="260" x="710" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="e0" edge="1" parent="1" source="u" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#475569;fontSize=12;labelBackgroundColor=#ffffff;" target="g" value="Invoke approved tool">
+          <mxGeometry relative="1" y="20" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="gr" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#475569;fontSize=12;labelBackgroundColor=#ffffff;" target="g" value="Gateway credentials">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="g" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#475569;fontSize=12;labelBackgroundColor=#ffffff;" target="l" value="Invoke adapter target">
+          <mxGeometry relative="1" y="20" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="lr" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#475569;fontSize=12;labelBackgroundColor=#ffffff;" target="l" value="Adapter credentials">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="l" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#475569;fontSize=12;labelBackgroundColor=#ffffff;" target="b" value="Start / Connect / Automate / Stop">
+          <mxGeometry relative="1" x="0.619" y="60" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="b" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#475569;fontSize=12;labelBackgroundColor=#ffffff;" target="l" value="Result / screenshot">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1215" y="380" />
+              <mxPoint x="842.5" y="380" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="l" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#475569;fontSize=12;labelBackgroundColor=#ffffff;" target="g" value="Tool response">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="842.5" y="380" />
+              <mxPoint x="490" y="380" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="g" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#475569;fontSize=12;labelBackgroundColor=#ffffff;" target="u" value="Tool response">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="490" y="380" />
+              <mxPoint x="160" y="380" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n0" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff7ed;strokeColor=#fdba74;fontColor=#7c2d12;fontSize=12;align=left;spacing=10;" value="Gateway does NOT automatically execute Browser APIs. For Lambda targets, Browser permissions belong to the Lambda execution role." vertex="1">
+          <mxGeometry height="85" width="670" x="360" y="480" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="page2" name="3 AgentCore vs EKS Identity">
+    <mxGraphModel dx="1866" dy="826" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1500" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="cp" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f3e8ff;strokeColor=#64748b;fontColor=#172b4d;fontSize=14;align=center;verticalAlign=middle;spacing=8;" value="Guardian Control Plane&lt;br&gt;Governance approval" vertex="1">
+          <mxGeometry height="70" width="340" x="555" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="rt" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#64748b;fontColor=#172b4d;fontSize=14;align=center;verticalAlign=middle;spacing=8;" value="AgentCore Runtime&lt;br&gt;ARM64 agent" vertex="1">
+          <mxGeometry height="80" width="270" x="130" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="eks" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#64748b;fontColor=#172b4d;fontSize=14;align=center;verticalAlign=middle;spacing=8;" value="Amazon EKS&lt;br&gt;Kubernetes agent pod" vertex="1">
+          <mxGeometry height="80" width="270" x="590" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="other" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#64748b;fontColor=#172b4d;fontSize=14;align=center;verticalAlign=middle;spacing=8;" value="Other Kubernetes&lt;br&gt;Federated AWS identity" vertex="1">
+          <mxGeometry height="80" width="270" x="1050" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="rr" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fef3c7;strokeColor=#64748b;fontColor=#172b4d;fontSize=14;align=center;verticalAlign=middle;spacing=8;" value="Runtime execution role&lt;br&gt;Browser IAM policy" vertex="1">
+          <mxGeometry height="80" width="270" x="130" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="er" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fef3c7;strokeColor=#64748b;fontColor=#172b4d;fontSize=14;align=center;verticalAlign=middle;spacing=8;" value="Pod Identity / IRSA role&lt;br&gt;Browser IAM policy" vertex="1">
+          <mxGeometry height="80" width="270" x="590" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="or" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fef3c7;strokeColor=#64748b;fontColor=#172b4d;fontSize=14;align=center;verticalAlign=middle;spacing=8;" value="Federated / assumed IAM role&lt;br&gt;Browser IAM policy" vertex="1">
+          <mxGeometry height="80" width="270" x="1050" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="browser" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dcfce7;strokeColor=#64748b;fontColor=#172b4d;fontSize=14;align=center;verticalAlign=middle;spacing=8;" value="AWS-managed Browser&lt;br&gt;aws.browser.v1" vertex="1">
+          <mxGeometry height="90" width="290" x="580" y="575" as="geometry" />
+        </mxCell>
+        <mxCell id="e0" edge="1" parent="1" source="cp" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#475569;fontSize=12;labelBackgroundColor=#ffffff;" target="rt" value="Approved">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="cp" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#475569;fontSize=12;labelBackgroundColor=#ffffff;" target="eks" value="Approved">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="cp" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#475569;fontSize=12;labelBackgroundColor=#ffffff;" target="other" value="Approved">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="rt" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#475569;fontSize=12;labelBackgroundColor=#ffffff;" target="rr" value="Uses">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="eks" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#475569;fontSize=12;labelBackgroundColor=#ffffff;" target="er" value="Service account binding">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="other" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#475569;fontSize=12;labelBackgroundColor=#ffffff;" target="or" value="Short-lived credentials">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="rr" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#475569;fontSize=12;labelBackgroundColor=#ffffff;" target="browser" value="Browser APIs">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="265" y="470" />
+              <mxPoint x="725" y="470" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="er" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#475569;fontSize=12;labelBackgroundColor=#ffffff;" target="browser" value="Browser APIs">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="or" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#475569;fontSize=12;labelBackgroundColor=#ffffff;" target="browser" value="Browser APIs">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1185" y="470" />
+              <mxPoint x="725" y="470" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n0" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff7ed;strokeColor=#fdba74;fontColor=#7c2d12;fontSize=12;align=left;spacing=10;" value="All paths need the Browser policy on the actual caller. EKS pods do not inherit the AgentCore Runtime role." vertex="1">
+          <mxGeometry height="70" width="700" x="380" y="750" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="page3" name="4 Browser Action Loop">
+    <mxGraphModel dx="1715" dy="759" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1500" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="u" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#64748b;fontColor=#172b4d;fontSize=14;align=center;verticalAlign=middle;spacing=8;" value="User&lt;br&gt;Web task" vertex="1">
+          <mxGeometry height="75" width="180" x="50" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="a" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#64748b;fontColor=#172b4d;fontSize=14;align=center;verticalAlign=middle;spacing=8;" value="Agent&lt;br&gt;Orchestrates tool calls" vertex="1">
+          <mxGeometry height="75" width="230" x="310" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="llm" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f3e8ff;strokeColor=#64748b;fontColor=#172b4d;fontSize=14;align=center;verticalAlign=middle;spacing=8;" value="LLM&lt;br&gt;Selects browser action" vertex="1">
+          <mxGeometry height="80" width="260" x="620" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="adapter" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fef3c7;strokeColor=#64748b;fontColor=#172b4d;fontSize=14;align=center;verticalAlign=middle;spacing=8;" value="Playwright / Browser-use&lt;br&gt;Command translation" vertex="1">
+          <mxGeometry height="85" width="260" x="620" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="browser" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dcfce7;strokeColor=#64748b;fontColor=#172b4d;fontSize=14;align=center;verticalAlign=middle;spacing=8;" value="Managed Headless Browser&lt;br&gt;AgentCore Browser session" vertex="1">
+          <mxGeometry height="95" width="280" x="1000" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="web" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#64748b;fontColor=#172b4d;fontSize=14;align=center;verticalAlign=middle;spacing=8;" value="Website" vertex="1">
+          <mxGeometry height="70" width="180" x="1050" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="obs" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f3e8ff;strokeColor=#64748b;fontColor=#172b4d;fontSize=14;align=center;verticalAlign=middle;spacing=8;" value="Screenshot / DOM / observation" vertex="1">
+          <mxGeometry height="70" width="260" x="630" y="555" as="geometry" />
+        </mxCell>
+        <mxCell id="e0" edge="1" parent="1" source="u" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#475569;fontSize=12;labelBackgroundColor=#ffffff;" target="a" value="Query">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="a" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#475569;fontSize=12;labelBackgroundColor=#ffffff;" target="llm" value="Prompt / context">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="llm" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#475569;fontSize=12;labelBackgroundColor=#ffffff;" target="adapter" value="Click / type / navigate">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="a" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#475569;fontSize=12;labelBackgroundColor=#ffffff;" target="adapter" value="Execute tool">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="adapter" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#475569;fontSize=12;labelBackgroundColor=#ffffff;" target="browser" value="IAM-authenticated session + commands">
+          <mxGeometry relative="1" x="0.0638" y="-10" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="940" y="352.5" />
+              <mxPoint x="940" y="420" />
+              <mxPoint x="1140" y="420" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="browser" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#475569;fontSize=12;labelBackgroundColor=#ffffff;" target="web" value="Interact">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="web" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#475569;fontSize=12;labelBackgroundColor=#ffffff;" target="browser" value="Page response">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="browser" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#475569;fontSize=12;labelBackgroundColor=#ffffff;" target="obs" value="Result">
+          <mxGeometry relative="1" x="-0.5978" y="43" as="geometry">
+            <mxPoint y="-1" as="offset" />
+            <Array as="points">
+              <mxPoint x="1140" y="460" />
+              <mxPoint x="760" y="460" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="obs" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#475569;fontSize=12;labelBackgroundColor=#ffffff;" target="a" value="Tool observation">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="a" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#475569;fontSize=12;labelBackgroundColor=#ffffff;" target="llm" value="Continue reasoning">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="n0" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff7ed;strokeColor=#fdba74;fontColor=#7c2d12;fontSize=12;align=left;spacing=10;" value="StartBrowserSession and Connect are session setup steps, not necessarily repeated for each click. StopBrowserSession at completion." vertex="1">
+          <mxGeometry height="70" width="810" x="350" y="735" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
