@@ -1,0 +1,1463 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" agent="Guardian Architecture" version="29.0.0" type="device" compressed="false">
+  <diagram id="01-AWS-system-architecture" name="01 AWS system architecture">
+    <mxGraphModel dx="2800" dy="2260" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2800" pageHeight="2260" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Guardian AI Control Plane — system architecture" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#142D4E;fontFamily=DejaVu Sans;fontSize=30;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;spacing=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="22" width="2450" height="46" />
+        </mxCell>
+        <mxCell id="status" value="DRAFT v0.3 • CONFIDENTIAL&lt;br&gt;26 Oct 2026 • Guardian" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#A33A43;fontFamily=DejaVu Sans;fontSize=14;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;spacing=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="2490" y="25" width="270" height="40" />
+        </mxCell>
+        <mxCell id="rule" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#142D4E;strokeColor=#142D4E;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=17;spacing=12;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="84" width="2720" height="3" />
+        </mxCell>
+        <mxCell id="subtitle" value="Current version • Harness uses Bedrock in Account B • Guardian apps and Claude Code use the Account A API Inference Gateway" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#53677C;fontFamily=DejaVu Sans;fontSize=17;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;spacing=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="100" width="2720" height="40" />
+        </mxCell>
+        <mxCell id="footer" value="GUARDIAN AI PLATFORM  |  Native AWS shapes and editable connectors  |  [P] = proposed / to confirm  |  1 / 4" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#53677C;fontFamily=DejaVu Sans;fontSize=14;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;spacing=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="2220" width="2720" height="26" />
+        </mxCell>
+        <mxCell id="identity" value="&lt;b&gt;Guardian access&lt;/b&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FAFAFC;strokeColor=#A5ACB8;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=21;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;verticalAlign=top;spacingTop=12;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="170" width="270" height="470" />
+        </mxCell>
+        <mxCell id="users" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="identity">
+          <mxGeometry as="geometry" x="20" y="55" width="230" height="155" />
+        </mxCell>
+        <mxCell id="users-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.users;fillColor=#5B6B7E;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="users">
+          <mxGeometry as="geometry" x="80" y="10" width="65" height="65" />
+        </mxCell>
+        <mxCell id="users-text" value="&lt;b&gt;Guardian user&lt;/b&gt;&lt;br&gt;Entra group access" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=16;spacing=1;align=center;verticalAlign=middle;" vertex="1" parent="users">
+          <mxGeometry as="geometry" x="10" y="90" width="210" height="55" />
+        </mxCell>
+        <mxCell id="entra" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="identity">
+          <mxGeometry as="geometry" x="20" y="235" width="230" height="140" />
+        </mxCell>
+        <mxCell id="entra-text" value="&lt;b&gt;Microsoft Entra ID&lt;/b&gt;&lt;br&gt;Control Plane SSO&lt;br&gt;Application access" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#A4B6C8;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=16;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="entra">
+          <mxGeometry as="geometry" x="0" y="0" width="230" height="140" />
+        </mxCell>
+        <mxCell id="repos" value="&lt;b&gt;Control Plane source and delivery&lt;/b&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FAFBFD;strokeColor=#B1BDCB;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=20;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;verticalAlign=top;spacingTop=12;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="350" y="170" width="1000" height="180" />
+        </mxCell>
+        <mxCell id="repo-ui" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="repos">
+          <mxGeometry as="geometry" x="25" y="65" width="285" height="75" />
+        </mxCell>
+        <mxCell id="repo-ui-text" value="&lt;b&gt;UI Git repository&lt;/b&gt;&lt;br&gt;UI container image" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#A4B6C8;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=16;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="repo-ui">
+          <mxGeometry as="geometry" x="0" y="0" width="285" height="75" />
+        </mxCell>
+        <mxCell id="repo-api" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="repos">
+          <mxGeometry as="geometry" x="345" y="65" width="285" height="75" />
+        </mxCell>
+        <mxCell id="repo-api-text" value="&lt;b&gt;API Git repository&lt;/b&gt;&lt;br&gt;API + Inference Gateway" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#A4B6C8;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=16;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="repo-api">
+          <mxGeometry as="geometry" x="0" y="0" width="285" height="75" />
+        </mxCell>
+        <mxCell id="pipeline" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="repos">
+          <mxGeometry as="geometry" x="665" y="55" width="310" height="95" />
+        </mxCell>
+        <mxCell id="pipeline-text" value="&lt;b&gt;Delivery pipeline [P]&lt;/b&gt;&lt;br&gt;Build / scan / deploy&lt;br&gt;Versioned templates" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#A4B6C8;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=15;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="pipeline">
+          <mxGeometry as="geometry" x="0" y="0" width="310" height="95" />
+        </mxCell>
+        <mxCell id="org" value="&lt;b&gt;Organization → environment-specific AWS execution accounts&lt;/b&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFF9F0;strokeColor=#C87524;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=20;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;verticalAlign=top;spacingTop=12;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1420" y="170" width="960" height="180" />
+        </mxCell>
+        <mxCell id="env-dev" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="org">
+          <mxGeometry as="geometry" x="25" y="65" width="280" height="75" />
+        </mxCell>
+        <mxCell id="env-dev-text" value="&lt;b&gt;Dev&lt;/b&gt;&lt;br&gt;Non-production AWS account" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#A4B6C8;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=17;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="env-dev">
+          <mxGeometry as="geometry" x="0" y="0" width="280" height="75" />
+        </mxCell>
+        <mxCell id="env-uat" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="org">
+          <mxGeometry as="geometry" x="340" y="65" width="280" height="75" />
+        </mxCell>
+        <mxCell id="env-uat-text" value="&lt;b&gt;UAT&lt;/b&gt;&lt;br&gt;Non-production AWS account" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#A4B6C8;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=17;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="env-uat">
+          <mxGeometry as="geometry" x="0" y="0" width="280" height="75" />
+        </mxCell>
+        <mxCell id="env-prod" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="org">
+          <mxGeometry as="geometry" x="655" y="65" width="280" height="75" />
+        </mxCell>
+        <mxCell id="env-prod-text" value="&lt;b&gt;Production&lt;/b&gt;&lt;br&gt;Production AWS account" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#A4B6C8;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=17;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="env-prod">
+          <mxGeometry as="geometry" x="0" y="0" width="280" height="75" />
+        </mxCell>
+        <mxCell id="orgnote" value="Each account has its own Agent + Gateway Tools Entra apps and credential providers." style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#53677C;fontFamily=DejaVu Sans;fontSize=15;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;spacing=0;" vertex="1" parent="org">
+          <mxGeometry as="geometry" x="25" y="145" width="910" height="25" />
+        </mxCell>
+        <mxCell id="monitor-title" value="&lt;b&gt;Guardian integrations&lt;/b&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#F7FAFA;strokeColor=#86A9AB;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=19;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;verticalAlign=top;spacingTop=12;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="2440" y="170" width="320" height="180" />
+        </mxCell>
+        <mxCell id="integrations-note" value="Monitoring and shared services&lt;br&gt;ADOT host/account: TBD&lt;br&gt;Splunk / AppD location: [P]" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#53677C;fontFamily=DejaVu Sans;fontSize=16;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;spacing=0;" vertex="1" parent="monitor-title">
+          <mxGeometry as="geometry" x="20" y="60" width="280" height="90" />
+        </mxCell>
+        <mxCell id="account-a" value="&lt;b&gt;AWS Account A — Control Plane platform&lt;/b&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FBFCFF;strokeColor=#2374AB;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=23;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;verticalAlign=top;spacingTop=12;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="350" y="390" width="1000" height="1090" />
+        </mxCell>
+        <mxCell id="vpc-a" value="&lt;b&gt;PROD VPC [P]&lt;/b&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#8C4FFF;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=21;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;verticalAlign=top;spacingTop=12;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="account-a">
+          <mxGeometry as="geometry" x="25" y="60" width="950" height="915" />
+        </mxCell>
+        <mxCell id="vpc-a-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.vpc;fillColor=#8C4FFF;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="vpc-a">
+          <mxGeometry as="geometry" x="895" y="10" width="38" height="38" />
+        </mxCell>
+        <mxCell id="az-a" value="&lt;b&gt;Availability Zone A [P]&lt;/b&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FAFCFE;strokeColor=#A9B8C6;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=18;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;verticalAlign=top;spacingTop=12;container=1;collapsible=0;recursiveResize=0;dashed=1;dashPattern=6 4;" vertex="1" parent="vpc-a">
+          <mxGeometry as="geometry" x="20" y="60" width="440" height="820" />
+        </mxCell>
+        <mxCell id="public-a" value="&lt;b&gt;Public subnet • ingress / egress [P]&lt;/b&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#F0F7EC;strokeColor=#97B586;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=16;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;verticalAlign=top;spacingTop=12;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="az-a">
+          <mxGeometry as="geometry" x="15" y="50" width="410" height="160" />
+        </mxCell>
+        <mxCell id="alb-a" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="public-a">
+          <mxGeometry as="geometry" x="10" y="50" width="260" height="85" />
+        </mxCell>
+        <mxCell id="alb-a-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.application_load_balancer;fillColor=#8C4FFF;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="alb-a">
+          <mxGeometry as="geometry" x="12" y="11.0" width="63" height="63" />
+        </mxCell>
+        <mxCell id="alb-a-text" value="&lt;b&gt;ALB / AZ [P]&lt;/b&gt;&lt;br&gt;HTTPS ingress" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=14;spacing=1;align=center;verticalAlign=middle;" vertex="1" parent="alb-a">
+          <mxGeometry as="geometry" x="95" y="5" width="160" height="75" />
+        </mxCell>
+        <mxCell id="nat-a" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="public-a">
+          <mxGeometry as="geometry" x="280" y="50" width="120" height="105" />
+        </mxCell>
+        <mxCell id="nat-a-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.nat_gateway;fillColor=#8C4FFF;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="nat-a">
+          <mxGeometry as="geometry" x="12" y="18.5" width="68" height="68" />
+        </mxCell>
+        <mxCell id="nat-a-text" value="&lt;b&gt;NAT [P]&lt;/b&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=12;spacing=1;align=center;verticalAlign=middle;" vertex="1" parent="nat-a">
+          <mxGeometry as="geometry" x="0" y="80" width="120" height="22" />
+        </mxCell>
+        <mxCell id="work-a" value="&lt;b&gt;Private subnet • Kubernetes workloads&lt;/b&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#EDF4FC;strokeColor=#87AACE;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=16;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;verticalAlign=top;spacingTop=12;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="az-a">
+          <mxGeometry as="geometry" x="15" y="235" width="410" height="370" />
+        </mxCell>
+        <mxCell id="ui-a" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="work-a">
+          <mxGeometry as="geometry" x="15" y="55" width="380" height="110" />
+        </mxCell>
+        <mxCell id="ui-a-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.eks;fillColor=#ED7100;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="ui-a">
+          <mxGeometry as="geometry" x="12" y="21.0" width="68" height="68" />
+        </mxCell>
+        <mxCell id="ui-a-text" value="&lt;b&gt;Control Plane UI&lt;/b&gt;&lt;br&gt;UI container replica&lt;br&gt;Kubernetes / EKS [P]" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=17;spacing=1;align=center;verticalAlign=middle;" vertex="1" parent="ui-a">
+          <mxGeometry as="geometry" x="95" y="5" width="280" height="100" />
+        </mxCell>
+        <mxCell id="api-a" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="work-a">
+          <mxGeometry as="geometry" x="15" y="220" width="380" height="135" />
+        </mxCell>
+        <mxCell id="api-a-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.eks;fillColor=#ED7100;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="api-a">
+          <mxGeometry as="geometry" x="12" y="21.0" width="68" height="68" />
+        </mxCell>
+        <mxCell id="api-a-text" value="&lt;b&gt;Control Plane API&lt;/b&gt;&lt;br&gt;API container replica" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=16;spacing=1;align=center;verticalAlign=middle;" vertex="1" parent="api-a">
+          <mxGeometry as="geometry" x="95" y="5" width="280" height="60" />
+        </mxCell>
+        <mxCell id="data-a" value="&lt;b&gt;Private data subnet [P]&lt;/b&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#F5F0FA;strokeColor=#AC98C5;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=16;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;verticalAlign=top;spacingTop=12;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="az-a">
+          <mxGeometry as="geometry" x="15" y="630" width="410" height="165" />
+        </mxCell>
+        <mxCell id="db-a" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="data-a">
+          <mxGeometry as="geometry" x="15" y="50" width="380" height="95" />
+        </mxCell>
+        <mxCell id="db-a-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.generic_database;fillColor=#C925D1;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="db-a">
+          <mxGeometry as="geometry" x="12" y="13.5" width="68" height="68" />
+        </mxCell>
+        <mxCell id="db-a-text" value="&lt;b&gt;Control Plane database&lt;/b&gt;&lt;br&gt;Records / resource metadata" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=15;spacing=1;align=center;verticalAlign=middle;" vertex="1" parent="db-a">
+          <mxGeometry as="geometry" x="95" y="5" width="280" height="85" />
+        </mxCell>
+        <mxCell id="az-b" value="&lt;b&gt;Availability Zone B [P]&lt;/b&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FAFCFE;strokeColor=#A9B8C6;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=18;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;verticalAlign=top;spacingTop=12;container=1;collapsible=0;recursiveResize=0;dashed=1;dashPattern=6 4;" vertex="1" parent="vpc-a">
+          <mxGeometry as="geometry" x="490" y="60" width="440" height="820" />
+        </mxCell>
+        <mxCell id="public-b" value="&lt;b&gt;Public subnet • ingress / egress [P]&lt;/b&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#F0F7EC;strokeColor=#97B586;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=16;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;verticalAlign=top;spacingTop=12;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="az-b">
+          <mxGeometry as="geometry" x="15" y="50" width="410" height="160" />
+        </mxCell>
+        <mxCell id="alb-b" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="public-b">
+          <mxGeometry as="geometry" x="10" y="50" width="260" height="85" />
+        </mxCell>
+        <mxCell id="alb-b-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.application_load_balancer;fillColor=#8C4FFF;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="alb-b">
+          <mxGeometry as="geometry" x="12" y="11.0" width="63" height="63" />
+        </mxCell>
+        <mxCell id="alb-b-text" value="&lt;b&gt;ALB / AZ [P]&lt;/b&gt;&lt;br&gt;HTTPS ingress" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=14;spacing=1;align=center;verticalAlign=middle;" vertex="1" parent="alb-b">
+          <mxGeometry as="geometry" x="95" y="5" width="160" height="75" />
+        </mxCell>
+        <mxCell id="nat-b" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="public-b">
+          <mxGeometry as="geometry" x="280" y="50" width="120" height="105" />
+        </mxCell>
+        <mxCell id="nat-b-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.nat_gateway;fillColor=#8C4FFF;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="nat-b">
+          <mxGeometry as="geometry" x="12" y="18.5" width="68" height="68" />
+        </mxCell>
+        <mxCell id="nat-b-text" value="&lt;b&gt;NAT [P]&lt;/b&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=12;spacing=1;align=center;verticalAlign=middle;" vertex="1" parent="nat-b">
+          <mxGeometry as="geometry" x="0" y="80" width="120" height="22" />
+        </mxCell>
+        <mxCell id="work-b" value="&lt;b&gt;Private subnet • Kubernetes workloads&lt;/b&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#EDF4FC;strokeColor=#87AACE;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=16;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;verticalAlign=top;spacingTop=12;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="az-b">
+          <mxGeometry as="geometry" x="15" y="235" width="410" height="370" />
+        </mxCell>
+        <mxCell id="ui-b" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="work-b">
+          <mxGeometry as="geometry" x="15" y="55" width="380" height="110" />
+        </mxCell>
+        <mxCell id="ui-b-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.eks;fillColor=#ED7100;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="ui-b">
+          <mxGeometry as="geometry" x="12" y="21.0" width="68" height="68" />
+        </mxCell>
+        <mxCell id="ui-b-text" value="&lt;b&gt;Control Plane UI&lt;/b&gt;&lt;br&gt;UI container replica&lt;br&gt;Kubernetes / EKS [P]" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=17;spacing=1;align=center;verticalAlign=middle;" vertex="1" parent="ui-b">
+          <mxGeometry as="geometry" x="95" y="5" width="280" height="100" />
+        </mxCell>
+        <mxCell id="api-b" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="work-b">
+          <mxGeometry as="geometry" x="15" y="220" width="380" height="135" />
+        </mxCell>
+        <mxCell id="api-b-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.eks;fillColor=#ED7100;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="api-b">
+          <mxGeometry as="geometry" x="12" y="21.0" width="68" height="68" />
+        </mxCell>
+        <mxCell id="api-b-text" value="&lt;b&gt;Control Plane API&lt;/b&gt;&lt;br&gt;API container replica" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=16;spacing=1;align=center;verticalAlign=middle;" vertex="1" parent="api-b">
+          <mxGeometry as="geometry" x="95" y="5" width="280" height="60" />
+        </mxCell>
+        <mxCell id="data-b" value="&lt;b&gt;Private data subnet [P]&lt;/b&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#F5F0FA;strokeColor=#AC98C5;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=16;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;verticalAlign=top;spacingTop=12;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="az-b">
+          <mxGeometry as="geometry" x="15" y="630" width="410" height="165" />
+        </mxCell>
+        <mxCell id="db-b" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="data-b">
+          <mxGeometry as="geometry" x="15" y="50" width="380" height="95" />
+        </mxCell>
+        <mxCell id="db-b-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.generic_database;fillColor=#C925D1;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="db-b">
+          <mxGeometry as="geometry" x="12" y="13.5" width="68" height="68" />
+        </mxCell>
+        <mxCell id="db-b-text" value="&lt;b&gt;HA database replica [P]&lt;/b&gt;&lt;br&gt;Engine / HA mode: TBD" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=15;spacing=1;align=center;verticalAlign=middle;" vertex="1" parent="db-b">
+          <mxGeometry as="geometry" x="95" y="5" width="280" height="85" />
+        </mxCell>
+        <mxCell id="a-note" value="One logical ALB and one Kubernetes cluster [P]; UI / API deployments span both AZs." style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#53677C;fontFamily=DejaVu Sans;fontSize=15;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;spacing=0;" vertex="1" parent="vpc-a">
+          <mxGeometry as="geometry" x="25" y="885" width="890" height="25" />
+        </mxCell>
+        <mxCell id="app-role" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="account-a">
+          <mxGeometry as="geometry" x="45" y="1000" width="470" height="70" />
+        </mxCell>
+        <mxCell id="app-role-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.role;fillColor=#DD344C;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="app-role">
+          <mxGeometry as="geometry" x="12" y="11.0" width="48" height="48" />
+        </mxCell>
+        <mxCell id="app-role-text" value="&lt;b&gt;ControlPlane-App&lt;/b&gt;&lt;br&gt;Assumed by Kubernetes containers" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=17;spacing=1;align=center;verticalAlign=middle;" vertex="1" parent="app-role">
+          <mxGeometry as="geometry" x="95" y="5" width="370" height="60" />
+        </mxCell>
+        <mxCell id="account-b" value="&lt;b&gt;AWS Account B — selected LOB execution account&lt;/b&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFFDF8;strokeColor=#C87524;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=22;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;verticalAlign=top;spacingTop=12;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1420" y="390" width="960" height="1090" />
+        </mxCell>
+        <mxCell id="selected-env" value="Same pattern applies separately to Dev, UAT and Production." style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#53677C;fontFamily=DejaVu Sans;fontSize=17;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;spacing=0;" vertex="1" parent="account-b">
+          <mxGeometry as="geometry" x="25" y="45" width="905" height="30" />
+        </mxCell>
+        <mxCell id="management" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="account-b">
+          <mxGeometry as="geometry" x="20" y="100" width="300" height="125" />
+        </mxCell>
+        <mxCell id="management-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.role;fillColor=#DD344C;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="management">
+          <mxGeometry as="geometry" x="120" y="5" width="58" height="58" />
+        </mxCell>
+        <mxCell id="management-text" value="&lt;b&gt;ControlPlane-Management&lt;/b&gt;&lt;br&gt;Create / update resources" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=13;spacing=1;align=center;verticalAlign=middle;" vertex="1" parent="management">
+          <mxGeometry as="geometry" x="2" y="72" width="296" height="50" />
+        </mxCell>
+        <mxCell id="agent-invoke" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="account-b">
+          <mxGeometry as="geometry" x="330" y="100" width="300" height="125" />
+        </mxCell>
+        <mxCell id="agent-invoke-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.role;fillColor=#DD344C;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="agent-invoke">
+          <mxGeometry as="geometry" x="120" y="5" width="58" height="58" />
+        </mxCell>
+        <mxCell id="agent-invoke-text" value="&lt;b&gt;ControlPlane-Execution-Agent&lt;/b&gt;&lt;br&gt;Invoke agents" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=13;spacing=1;align=center;verticalAlign=middle;" vertex="1" parent="agent-invoke">
+          <mxGeometry as="geometry" x="2" y="72" width="296" height="50" />
+        </mxCell>
+        <mxCell id="gateway-invoke" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="account-b">
+          <mxGeometry as="geometry" x="640" y="100" width="300" height="125" />
+        </mxCell>
+        <mxCell id="gateway-invoke-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.role;fillColor=#DD344C;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="gateway-invoke">
+          <mxGeometry as="geometry" x="120" y="5" width="58" height="58" />
+        </mxCell>
+        <mxCell id="gateway-invoke-text" value="&lt;b&gt;ControlPlane-Execution-Gateway&lt;/b&gt;&lt;br&gt;Invoke Gateways / Toolkits" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=13;spacing=1;align=center;verticalAlign=middle;" vertex="1" parent="gateway-invoke">
+          <mxGeometry as="geometry" x="2" y="72" width="296" height="50" />
+        </mxCell>
+        <mxCell id="managed" value="&lt;b&gt;AWS-managed AI and tool services • owned by this execution account&lt;/b&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFFCF4;strokeColor=#D1B376;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=18;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;verticalAlign=top;spacingTop=12;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="account-b">
+          <mxGeometry as="geometry" x="20" y="265" width="920" height="485" />
+        </mxCell>
+        <mxCell id="harness" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="managed">
+          <mxGeometry as="geometry" x="25" y="60" width="405" height="125" />
+        </mxCell>
+        <mxCell id="harness-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.bedrock_agentcore;fillColor=#01A88D;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="harness">
+          <mxGeometry as="geometry" x="12" y="28.5" width="68" height="68" />
+        </mxCell>
+        <mxCell id="harness-text" value="&lt;b&gt;Harness agent&lt;/b&gt;&lt;br&gt;AgentCore Runtime [P]&lt;br&gt;OTEL telemetry configured" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=18;spacing=1;align=center;verticalAlign=middle;" vertex="1" parent="harness">
+          <mxGeometry as="geometry" x="95" y="5" width="305" height="115" />
+        </mxCell>
+        <mxCell id="gateway" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="managed">
+          <mxGeometry as="geometry" x="490" y="60" width="405" height="125" />
+        </mxCell>
+        <mxCell id="gateway-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.bedrock_agentcore;fillColor=#01A88D;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="gateway">
+          <mxGeometry as="geometry" x="12" y="28.5" width="68" height="68" />
+        </mxCell>
+        <mxCell id="gateway-text" value="&lt;b&gt;Gateway / Toolkit&lt;/b&gt;&lt;br&gt;AgentCore Gateway&lt;br&gt;Approved MCP tools" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=18;spacing=1;align=center;verticalAlign=middle;" vertex="1" parent="gateway">
+          <mxGeometry as="geometry" x="95" y="5" width="305" height="115" />
+        </mxCell>
+        <mxCell id="targets" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="managed">
+          <mxGeometry as="geometry" x="490" y="235" width="405" height="85" />
+        </mxCell>
+        <mxCell id="targets-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.lambda;fillColor=#ED7100;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="targets">
+          <mxGeometry as="geometry" x="12" y="11.0" width="63" height="63" />
+        </mxCell>
+        <mxCell id="targets-text" value="&lt;b&gt;Approved targets&lt;/b&gt;&lt;br&gt;Lambda / API / MCP adapters" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=16;spacing=1;align=center;verticalAlign=middle;" vertex="1" parent="targets">
+          <mxGeometry as="geometry" x="95" y="5" width="305" height="75" />
+        </mxCell>
+        <mxCell id="future-label" value="Future capabilities — provisioned in this execution account" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#53677C;fontFamily=DejaVu Sans;fontSize=16;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;spacing=0;" vertex="1" parent="managed">
+          <mxGeometry as="geometry" x="25" y="330" width="855" height="25" />
+        </mxCell>
+        <mxCell id="browser" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="managed">
+          <mxGeometry as="geometry" x="25" y="375" width="200" height="85" />
+        </mxCell>
+        <mxCell id="browser-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.bedrock_agentcore;fillColor=#01A88D;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="browser">
+          <mxGeometry as="geometry" x="10" y="5" width="45" height="45" />
+        </mxCell>
+        <mxCell id="browser-text" value="&lt;b&gt;Browser&lt;/b&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=14;spacing=1;align=center;verticalAlign=middle;" vertex="1" parent="browser">
+          <mxGeometry as="geometry" x="5" y="55" width="190" height="25" />
+        </mxCell>
+        <mxCell id="code" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="managed">
+          <mxGeometry as="geometry" x="240" y="375" width="200" height="85" />
+        </mxCell>
+        <mxCell id="code-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.bedrock_agentcore;fillColor=#01A88D;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="code">
+          <mxGeometry as="geometry" x="10" y="5" width="45" height="45" />
+        </mxCell>
+        <mxCell id="code-text" value="&lt;b&gt;Code Interpreter&lt;/b&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=14;spacing=1;align=center;verticalAlign=middle;" vertex="1" parent="code">
+          <mxGeometry as="geometry" x="5" y="55" width="190" height="25" />
+        </mxCell>
+        <mxCell id="memory" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="managed">
+          <mxGeometry as="geometry" x="455" y="375" width="200" height="85" />
+        </mxCell>
+        <mxCell id="memory-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.bedrock_agentcore;fillColor=#01A88D;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="memory">
+          <mxGeometry as="geometry" x="10" y="5" width="45" height="45" />
+        </mxCell>
+        <mxCell id="memory-text" value="&lt;b&gt;Memory&lt;/b&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=14;spacing=1;align=center;verticalAlign=middle;" vertex="1" parent="memory">
+          <mxGeometry as="geometry" x="5" y="55" width="190" height="25" />
+        </mxCell>
+        <mxCell id="eval" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="managed">
+          <mxGeometry as="geometry" x="670" y="375" width="200" height="85" />
+        </mxCell>
+        <mxCell id="eval-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.bedrock_agentcore;fillColor=#01A88D;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="eval">
+          <mxGeometry as="geometry" x="10" y="5" width="45" height="45" />
+        </mxCell>
+        <mxCell id="eval-text" value="&lt;b&gt;Evaluations&lt;/b&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=14;spacing=1;align=center;verticalAlign=middle;" vertex="1" parent="eval">
+          <mxGeometry as="geometry" x="5" y="55" width="190" height="25" />
+        </mxCell>
+        <mxCell id="providers" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="account-b">
+          <mxGeometry as="geometry" x="30" y="785" width="900" height="100" />
+        </mxCell>
+        <mxCell id="providers-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.bedrock_agentcore;fillColor=#DD344C;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="providers">
+          <mxGeometry as="geometry" x="12" y="16.0" width="68" height="68" />
+        </mxCell>
+        <mxCell id="providers-text" value="&lt;b&gt;Security-provisioned AWS credential providers&lt;/b&gt;&lt;br&gt;Agent provider + Gateway Tools provider • separate pair for each environment&lt;br&gt;Control Plane registers references during execution-plane onboarding" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=17;spacing=1;align=center;verticalAlign=middle;" vertex="1" parent="providers">
+          <mxGeometry as="geometry" x="95" y="5" width="800" height="90" />
+        </mxCell>
+        <mxCell id="vpc-b" value="&lt;b&gt;Execution PROD VPC [P] / private connectivity&lt;/b&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#F6F3FC;strokeColor=#8C4FFF;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=18;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;verticalAlign=top;spacingTop=12;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="account-b">
+          <mxGeometry as="geometry" x="20" y="920" width="920" height="145" />
+        </mxCell>
+        <mxCell id="private-connect" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="vpc-b">
+          <mxGeometry as="geometry" x="25" y="50" width="870" height="75" />
+        </mxCell>
+        <mxCell id="private-connect-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.vpc;fillColor=#8C4FFF;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="private-connect">
+          <mxGeometry as="geometry" x="12" y="11.0" width="53" height="53" />
+        </mxCell>
+        <mxCell id="private-connect-text" value="&lt;b&gt;Private endpoints / VPC connections [P]&lt;/b&gt;&lt;br&gt;Approved business APIs and data services • routes / subnets / security groups: TBD" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=16;spacing=1;align=center;verticalAlign=middle;" vertex="1" parent="private-connect">
+          <mxGeometry as="geometry" x="95" y="5" width="770" height="65" />
+        </mxCell>
+        <mxCell id="obs" value="&lt;b&gt;Observability&lt;/b&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#F4FAFA;strokeColor=#168394;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=21;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;verticalAlign=top;spacingTop=12;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="2440" y="390" width="320" height="710" />
+        </mxCell>
+        <mxCell id="adot" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="obs">
+          <mxGeometry as="geometry" x="20" y="60" width="280" height="290" />
+        </mxCell>
+        <mxCell id="adot-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.distro_for_opentelemetry;fillColor=#E7157B;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="adot">
+          <mxGeometry as="geometry" x="100" y="10" width="70" height="70" />
+        </mxCell>
+        <mxCell id="adot-text" value="&lt;b&gt;AWS ADOT Collector&lt;/b&gt;&lt;br&gt;OTLP receiver&lt;br&gt;Configured PII /&lt;br&gt;confidential-data redaction&lt;br&gt;Export sanitized telemetry&lt;br&gt;Hosting location: TBD" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=16;spacing=1;align=center;verticalAlign=middle;" vertex="1" parent="adot">
+          <mxGeometry as="geometry" x="5" y="95" width="270" height="185" />
+        </mxCell>
+        <mxCell id="arize" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="obs">
+          <mxGeometry as="geometry" x="20" y="500" width="280" height="130" />
+        </mxCell>
+        <mxCell id="arize-text" value="&lt;b&gt;Arize&lt;/b&gt;&lt;br&gt;Agent observability&lt;br&gt;Receives redacted telemetry" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#A4B6C8;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=16;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="arize">
+          <mxGeometry as="geometry" x="0" y="0" width="280" height="130" />
+        </mxCell>
+        <mxCell id="pss" value="&lt;b&gt;Guardian tools VPC [P]&lt;/b&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#F7F2FC;strokeColor=#8C4FFF;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=18;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;verticalAlign=top;spacingTop=12;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="2440" y="1140" width="320" height="340" />
+        </mxCell>
+        <mxCell id="splunk" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="pss">
+          <mxGeometry as="geometry" x="20" y="60" width="280" height="95" />
+        </mxCell>
+        <mxCell id="splunk-text" value="&lt;b&gt;Splunk&lt;/b&gt;&lt;br&gt;Control Plane logs" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#A4B6C8;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=18;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="splunk">
+          <mxGeometry as="geometry" x="0" y="0" width="280" height="95" />
+        </mxCell>
+        <mxCell id="appd" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="pss">
+          <mxGeometry as="geometry" x="20" y="190" width="280" height="100" />
+        </mxCell>
+        <mxCell id="appd-text" value="&lt;b&gt;AppDynamics / AppD&lt;/b&gt;&lt;br&gt;Control Plane APM" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#A4B6C8;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=18;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="appd">
+          <mxGeometry as="geometry" x="0" y="0" width="280" height="100" />
+        </mxCell>
+        <mxCell id="services" value="&lt;b&gt;Guardian AWS services&lt;/b&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FAFCF6;strokeColor=#99AC75;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=17;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;verticalAlign=top;spacingTop=12;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="690" width="270" height="690" />
+        </mxCell>
+        <mxCell id="kms" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="services">
+          <mxGeometry as="geometry" x="20" y="60" width="230" height="125" />
+        </mxCell>
+        <mxCell id="kms-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.key_management_service;fillColor=#DD344C;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="kms">
+          <mxGeometry as="geometry" x="80" y="0" width="62" height="62" />
+        </mxCell>
+        <mxCell id="kms-text" value="&lt;b&gt;AWS KMS&lt;/b&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=14;spacing=1;align=center;verticalAlign=middle;" vertex="1" parent="kms">
+          <mxGeometry as="geometry" x="5" y="75" width="220" height="30" />
+        </mxCell>
+        <mxCell id="trail" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="services">
+          <mxGeometry as="geometry" x="20" y="210" width="230" height="125" />
+        </mxCell>
+        <mxCell id="trail-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.cloudtrail;fillColor=#E7157B;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="trail">
+          <mxGeometry as="geometry" x="80" y="0" width="62" height="62" />
+        </mxCell>
+        <mxCell id="trail-text" value="&lt;b&gt;CloudTrail&lt;/b&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=14;spacing=1;align=center;verticalAlign=middle;" vertex="1" parent="trail">
+          <mxGeometry as="geometry" x="5" y="75" width="220" height="30" />
+        </mxCell>
+        <mxCell id="watch" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="services">
+          <mxGeometry as="geometry" x="20" y="360" width="230" height="125" />
+        </mxCell>
+        <mxCell id="watch-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.cloudwatch;fillColor=#E7157B;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="watch">
+          <mxGeometry as="geometry" x="80" y="0" width="62" height="62" />
+        </mxCell>
+        <mxCell id="watch-text" value="&lt;b&gt;CloudWatch&lt;/b&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=14;spacing=1;align=center;verticalAlign=middle;" vertex="1" parent="watch">
+          <mxGeometry as="geometry" x="5" y="75" width="220" height="30" />
+        </mxCell>
+        <mxCell id="secrets" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="services">
+          <mxGeometry as="geometry" x="20" y="510" width="230" height="125" />
+        </mxCell>
+        <mxCell id="secrets-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.secrets_manager;fillColor=#DD344C;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="secrets">
+          <mxGeometry as="geometry" x="80" y="0" width="62" height="62" />
+        </mxCell>
+        <mxCell id="secrets-text" value="&lt;b&gt;Secrets Manager [P]&lt;/b&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=14;spacing=1;align=center;verticalAlign=middle;" vertex="1" parent="secrets">
+          <mxGeometry as="geometry" x="5" y="75" width="220" height="30" />
+        </mxCell>
+        <mxCell id="services-note" value="Supporting services shown&lt;br&gt;as references; ownership and&lt;br&gt;scope follow Guardian standards." style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#53677C;fontFamily=DejaVu Sans;fontSize=14;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;spacing=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="55" y="1400" width="245" height="100" />
+        </mxCell>
+        <mxCell id="key" value="&lt;b&gt;Reading the diagram&lt;/b&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FAFBFC;strokeColor=#BCC7D1;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=20;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;verticalAlign=top;spacingTop=12;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="2070" width="2720" height="145" />
+        </mxCell>
+        <mxCell id="key-text" value="Purple dashed = provisioning / role assumption. Green = runtime invocation. Blue = user / application access. Teal = telemetry.&lt;br&gt;Inference Gateway is an endpoint in the Control Plane API repository and API containers. Accounts C and D authenticate with API keys.&lt;br&gt;Harness currently invokes Bedrock directly in its execution account. Network routes, hosting assumptions and ADOT placement remain to be confirmed." style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#53677C;fontFamily=DejaVu Sans;fontSize=17;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;spacing=0;" vertex="1" parent="key">
+          <mxGeometry as="geometry" x="25" y="50" width="2660" height="75" />
+        </mxCell>
+        <mxCell id="inference-endpoint-a" value="&lt;b&gt;Inference Gateway endpoint&lt;/b&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#E6F5EE;strokeColor=#16806D;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=15;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="api-a">
+          <mxGeometry as="geometry" x="95" y="75" width="270" height="48" />
+        </mxCell>
+        <mxCell id="inference-endpoint-b" value="&lt;b&gt;Inference Gateway endpoint&lt;/b&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#E6F5EE;strokeColor=#16806D;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=15;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="api-b">
+          <mxGeometry as="geometry" x="95" y="75" width="270" height="48" />
+        </mxCell>
+        <mxCell id="bedrock-a" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="account-a">
+          <mxGeometry as="geometry" x="540" y="995" width="420" height="90" />
+        </mxCell>
+        <mxCell id="bedrock-a-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.bedrock;fillColor=#01A88D;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="bedrock-a">
+          <mxGeometry as="geometry" x="12" y="11.0" width="68" height="68" />
+        </mxCell>
+        <mxCell id="bedrock-a-text" value="&lt;b&gt;Bedrock model endpoints • A&lt;/b&gt;&lt;br&gt;Claude and other models&lt;br&gt;AWS-managed service" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=16;spacing=1;align=center;verticalAlign=middle;" vertex="1" parent="bedrock-a">
+          <mxGeometry as="geometry" x="95" y="5" width="320" height="80" />
+        </mxCell>
+        <mxCell id="bedrock-b" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="managed">
+          <mxGeometry as="geometry" x="25" y="235" width="405" height="85" />
+        </mxCell>
+        <mxCell id="bedrock-b-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.bedrock;fillColor=#01A88D;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="bedrock-b">
+          <mxGeometry as="geometry" x="12" y="11.0" width="63" height="63" />
+        </mxCell>
+        <mxCell id="bedrock-b-text" value="&lt;b&gt;Bedrock model endpoints • B&lt;/b&gt;&lt;br&gt;Direct Harness model access" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=16;spacing=1;align=center;verticalAlign=middle;" vertex="1" parent="bedrock-b">
+          <mxGeometry as="geometry" x="95" y="5" width="305" height="75" />
+        </mxCell>
+        <mxCell id="account-c" value="&lt;b&gt;AWS Account C — Guardian application account&lt;/b&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#F4F8FD;strokeColor=#2374AB;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=23;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;verticalAlign=top;spacingTop=12;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="350" y="1650" width="1000" height="260" />
+        </mxCell>
+        <mxCell id="guardian-apps" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="account-c">
+          <mxGeometry as="geometry" x="45" y="70" width="910" height="130" />
+        </mxCell>
+        <mxCell id="guardian-apps-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.client;fillColor=#5B6B7E;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="guardian-apps">
+          <mxGeometry as="geometry" x="12" y="31.0" width="68" height="68" />
+        </mxCell>
+        <mxCell id="guardian-apps-text" value="&lt;b&gt;Guardian apps&lt;/b&gt;&lt;br&gt;Application / microservice clients&lt;br&gt;API key authentication to Inference Gateway&lt;br&gt;Model access through Account A Bedrock" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=19;spacing=1;align=center;verticalAlign=middle;" vertex="1" parent="guardian-apps">
+          <mxGeometry as="geometry" x="95" y="5" width="810" height="120" />
+        </mxCell>
+        <mxCell id="account-d" value="&lt;b&gt;AWS Account D — corporate Claude Code account&lt;/b&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#F6F4FD;strokeColor=#7B4AB0;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=22;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;verticalAlign=top;spacingTop=12;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1420" y="1650" width="960" height="260" />
+        </mxCell>
+        <mxCell id="claude-code" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="account-d">
+          <mxGeometry as="geometry" x="45" y="70" width="870" height="130" />
+        </mxCell>
+        <mxCell id="claude-code-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.client;fillColor=#5B6B7E;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="claude-code">
+          <mxGeometry as="geometry" x="12" y="31.0" width="68" height="68" />
+        </mxCell>
+        <mxCell id="claude-code-text" value="&lt;b&gt;Claude Code&lt;/b&gt;&lt;br&gt;Runs in AWS Account D&lt;br&gt;API key authentication to Inference Gateway&lt;br&gt;Claude models through Account A Bedrock" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=19;spacing=1;align=center;verticalAlign=middle;" vertex="1" parent="claude-code">
+          <mxGeometry as="geometry" x="95" y="5" width="770" height="120" />
+        </mxCell>
+        <mxCell id="current-paths" value="&lt;b&gt;Current-version model access&lt;/b&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#EFF7F2;strokeColor=#16806D;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=19;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;verticalAlign=top;spacingTop=12;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="350" y="1945" width="2030" height="85" />
+        </mxCell>
+        <mxCell id="paths-note" value="Account B Harness → Account B Bedrock   |   Accounts C / D → API Inference Gateway in Account A → Account A Bedrock" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#53677C;fontFamily=DejaVu Sans;fontSize=18;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;spacing=0;" vertex="1" parent="current-paths">
+          <mxGeometry as="geometry" x="25" y="40" width="1980" height="30" />
+        </mxCell>
+        <mxCell id="sign-in" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#7B4AB0;strokeWidth=2;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;exitX=0.5;exitY=1.0;exitDx=0;exitDy=0;entryX=0.5;entryY=0.0;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="users" target="entra">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="repo-build1" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#53677C;strokeWidth=2;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;exitX=1.0;exitY=0.2;exitDx=0;exitDy=0;entryX=0.0;entryY=0.2631578947368421;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;dashed=1;dashPattern=6 4;" edge="1" parent="1" source="repo-ui" target="pipeline">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="675" y="250" />
+              <mxPoint x="675" y="220" />
+              <mxPoint x="1000" y="220" />
+              <mxPoint x="1000" y="250" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="repo-build2" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#53677C;strokeWidth=2;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;exitX=1.0;exitY=0.5333333333333333;exitDx=0;exitDy=0;entryX=0.0;entryY=0.5263157894736842;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;dashed=1;dashPattern=6 4;" edge="1" parent="1" source="repo-api" target="pipeline">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="ing-a" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#2374AB;strokeWidth=2;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;exitX=0.5;exitY=1.0;exitDx=0;exitDy=0;entryX=0.0;entryY=0.5;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="alb-a" target="ui-a">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="550" y="730" />
+              <mxPoint x="420" y="730" />
+              <mxPoint x="420" y="855" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ui-api-a" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#2374AB;strokeWidth=2;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;exitX=0.5;exitY=1.0;exitDx=0;exitDy=0;entryX=0.5;entryY=0.0;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="ui-a" target="api-a">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="ui-api-a-label" value="API access" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=none;fontFamily=DejaVu Sans;fontSize=15;fontColor=#2374AB;spacing=3;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="625" y="925" width="130" height="24" />
+        </mxCell>
+        <mxCell id="api-db-a" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#2374AB;strokeWidth=2;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;exitX=1.0;exitY=0.4074074074074074;exitDx=0;exitDy=0;entryX=0.5;entryY=0.0;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="api-a" target="db-a">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="825" y="1020" />
+              <mxPoint x="825" y="1170" />
+              <mxPoint x="615" y="1170" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ing-b" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#2374AB;strokeWidth=2;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;exitX=0.5;exitY=1.0;exitDx=0;exitDy=0;entryX=0.0;entryY=0.5;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="alb-b" target="ui-b">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="1020" y="730" />
+              <mxPoint x="890" y="730" />
+              <mxPoint x="890" y="855" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ui-api-b" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#2374AB;strokeWidth=2;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;exitX=0.5;exitY=1.0;exitDx=0;exitDy=0;entryX=0.5;entryY=0.0;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="ui-b" target="api-b">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="ui-api-b-label" value="API access" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=none;fontFamily=DejaVu Sans;fontSize=15;fontColor=#2374AB;spacing=3;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1095" y="925" width="130" height="24" />
+        </mxCell>
+        <mxCell id="api-db-b" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#2374AB;strokeWidth=2;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;exitX=1.0;exitY=0.4074074074074074;exitDx=0;exitDy=0;entryX=0.5;entryY=0.0;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="api-b" target="db-b">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="1295" y="1020" />
+              <mxPoint x="1295" y="1170" />
+              <mxPoint x="1085" y="1170" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="login" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#2374AB;strokeWidth=2;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;exitX=1.0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.0;entryY=0.49411764705882355;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="entra" target="alb-a">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="330" y="475" />
+              <mxPoint x="330" y="652" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="login-label" value="SSO / HTTPS" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=none;fontFamily=DejaVu Sans;fontSize=15;fontColor=#2374AB;spacing=3;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="295" y="670" width="140" height="25" />
+        </mxCell>
+        <mxCell id="api-role" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#7B4AB0;strokeWidth=2;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;exitX=0.0;exitY=0.48148148148148145;exitDx=0;exitDy=0;entryX=0.5;entryY=0.0;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;dashed=1;dashPattern=6 4;" edge="1" parent="1" source="api-a" target="app-role">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="385" y="1030" />
+              <mxPoint x="385" y="1375" />
+              <mxPoint x="630" y="1375" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mgmt-res" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#7B4AB0;strokeWidth=2;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;exitX=0.5;exitY=1.0;exitDx=0;exitDy=0;entryX=0.16304347826086957;entryY=0.0;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;dashed=1;dashPattern=6 4;" edge="1" parent="1" source="management" target="managed">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="agent-inv" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#16806D;strokeWidth=2;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;exitX=0.5;exitY=1.0;exitDx=0;exitDy=0;entryX=0.48148148148148145;entryY=0.0;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="agent-invoke" target="harness">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="1900" y="690" />
+              <mxPoint x="1660" y="690" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gateway-inv" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#16806D;strokeWidth=2;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;exitX=0.5;exitY=1.0;exitDx=0;exitDy=0;entryX=0.49382716049382713;entryY=0.0;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="gateway-invoke" target="gateway">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="2210" y="690" />
+              <mxPoint x="2130" y="690" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="agent-tools" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#16806D;strokeWidth=2;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;exitX=1.0;exitY=0.48;exitDx=0;exitDy=0;entryX=0.0;entryY=0.48;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="harness" target="gateway">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="agent-tools-label" value="MCP" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=none;fontFamily=DejaVu Sans;fontSize=15;fontColor=#16806D;spacing=3;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1875" y="746" width="50" height="24" />
+        </mxCell>
+        <mxCell id="tool-target" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#16806D;strokeWidth=2;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;exitX=0.49382716049382713;exitY=1.0;exitDx=0;exitDy=0;entryX=0.49382716049382713;entryY=0.0;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="gateway" target="targets">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="app-assume" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#7B4AB0;strokeWidth=2;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;exitX=0.5;exitY=1.0;exitDx=0;exitDy=0;entryX=0.0;entryY=0.48;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;dashed=1;dashPattern=6 4;" edge="1" parent="1" source="app-role" target="management">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="630" y="1510" />
+              <mxPoint x="1385" y="1510" />
+              <mxPoint x="1385" y="550" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="app-assume-label" value="AssumeRole • all three roles (detail: page 3)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=none;fontFamily=DejaVu Sans;fontSize=15;fontColor=#7B4AB0;spacing=3;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="850" y="1483" width="480" height="24" />
+        </mxCell>
+        <mxCell id="app-assume-agent" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#7B4AB0;strokeWidth=2;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;exitX=0.5;exitY=1.0;exitDx=0;exitDy=0;entryX=0.5;entryY=0.0;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;dashed=1;dashPattern=6 4;" edge="1" parent="1" source="app-role" target="agent-invoke">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="630" y="1510" />
+              <mxPoint x="1385" y="1510" />
+              <mxPoint x="1385" y="475" />
+              <mxPoint x="1900" y="475" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="app-assume-gateway" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#7B4AB0;strokeWidth=2;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;exitX=0.5;exitY=1.0;exitDx=0;exitDy=0;entryX=0.5;entryY=0.0;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;dashed=1;dashPattern=6 4;" edge="1" parent="1" source="app-role" target="gateway-invoke">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="630" y="1510" />
+              <mxPoint x="1385" y="1510" />
+              <mxPoint x="1385" y="475" />
+              <mxPoint x="2210" y="475" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="otel-export" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#168394;strokeWidth=2;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;exitX=0.49382716049382713;exitY=1.0;exitDx=0;exitDy=0;entryX=0.0;entryY=0.6206896551724138;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="harness" target="adot">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="1665" y="865" />
+              <mxPoint x="2405" y="865" />
+              <mxPoint x="2405" y="630" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="otel-export-label" value="OTEL / OTLP" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=none;fontFamily=DejaVu Sans;fontSize=15;fontColor=#168394;spacing=3;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="2180" y="847" width="165" height="26" />
+        </mxCell>
+        <mxCell id="adot-arize" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#168394;strokeWidth=2;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;exitX=0.5;exitY=1.0;exitDx=0;exitDy=0;entryX=0.5;entryY=0.0;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="adot" target="arize">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="adot-arize-label" value="Redact → export" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=none;fontFamily=DejaVu Sans;fontSize=15;fontColor=#168394;spacing=3;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="2465" y="785" width="270" height="28" />
+        </mxCell>
+        <mxCell id="logs" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#168394;strokeWidth=2;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;exitX=1.0;exitY=0.5925925925925926;exitDx=0;exitDy=0;entryX=0.0;entryY=0.47368421052631576;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="api-b" target="splunk">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="1320" y="1045" />
+              <mxPoint x="1320" y="1535" />
+              <mxPoint x="2390" y="1535" />
+              <mxPoint x="2390" y="1245" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="logs-label" value="Application logs" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=none;fontFamily=DejaVu Sans;fontSize=15;fontColor=#168394;spacing=3;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1850" y="1522" width="220" height="26" />
+        </mxCell>
+        <mxCell id="appd-telemetry" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#168394;strokeWidth=2;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;exitX=0.4868421052631579;exitY=0.8148148148148148;exitDx=0;exitDy=0;entryX=0.0;entryY=0.5;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="api-a" target="appd">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="610" y="1120" />
+              <mxPoint x="1365" y="1120" />
+              <mxPoint x="1365" y="1570" />
+              <mxPoint x="2415" y="1570" />
+              <mxPoint x="2415" y="1380" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="appd-telemetry-label" value="APM instrumentation" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=none;fontFamily=DejaVu Sans;fontSize=15;fontColor=#168394;spacing=3;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1850" y="1558" width="250" height="26" />
+        </mxCell>
+        <mxCell id="api-to-bedrock-a" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#16806D;strokeWidth=2;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;exitX=1.0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0.0;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="inference-endpoint-b" target="bedrock-a">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="1310" y="1064" />
+              <mxPoint x="1310" y="1375" />
+              <mxPoint x="1100" y="1375" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="api-a-to-bedrock-a" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#16806D;strokeWidth=2;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;exitX=1.0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0.0;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="inference-endpoint-a" target="bedrock-a">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="800" y="1064" />
+              <mxPoint x="800" y="1135" />
+              <mxPoint x="1310" y="1135" />
+              <mxPoint x="1310" y="1375" />
+              <mxPoint x="1100" y="1375" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="harness-direct-bedrock" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#16806D;strokeWidth=2;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;exitX=0.0;exitY=0.68;exitDx=0;exitDy=0;entryX=0.0;entryY=0.49411764705882355;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="harness" target="bedrock-b">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="1450" y="800" />
+              <mxPoint x="1450" y="932" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="harness-direct-bedrock-label" value="Direct model call" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=none;fontFamily=DejaVu Sans;fontSize=15;fontColor=#16806D;spacing=3;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1460" y="848" width="190" height="27" />
+        </mxCell>
+        <mxCell id="c-to-inference" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#16806D;strokeWidth=2;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;exitX=0.0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1.0;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="guardian-apps" target="inference-endpoint-a">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="340" y="1785" />
+              <mxPoint x="340" y="1128" />
+              <mxPoint x="655" y="1128" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d-to-inference" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#16806D;strokeWidth=2;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;exitX=0.0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1.0;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="claude-code" target="inference-endpoint-b">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="1400" y="1785" />
+              <mxPoint x="1400" y="1128" />
+              <mxPoint x="1125" y="1128" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="02-Environment-onboarding-and-identity" name="02 Environment onboarding and identity">
+    <mxGraphModel dx="2400" dy="1720" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2400" pageHeight="1720" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Organization onboarding — separate identities per environment" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#142D4E;fontFamily=DejaVu Sans;fontSize=30;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;spacing=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="22" width="2050" height="46" />
+        </mxCell>
+        <mxCell id="status" value="DRAFT v0.3 • CONFIDENTIAL&lt;br&gt;26 Oct 2026 • Guardian" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#A33A43;fontFamily=DejaVu Sans;fontSize=14;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;spacing=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="2090" y="25" width="270" height="40" />
+        </mxCell>
+        <mxCell id="rule" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#142D4E;strokeColor=#142D4E;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=17;spacing=12;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="84" width="2320" height="3" />
+        </mxCell>
+        <mxCell id="subtitle" value="Security team owns Entra application and credential-provider setup • Control Plane registers and consumes the supplied provider references" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#53677C;fontFamily=DejaVu Sans;fontSize=17;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;spacing=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="100" width="2320" height="40" />
+        </mxCell>
+        <mxCell id="footer" value="GUARDIAN AI PLATFORM  |  Native AWS shapes and editable connectors  |  [P] = proposed / to confirm  |  2 / 4" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#53677C;fontFamily=DejaVu Sans;fontSize=14;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;spacing=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="1680" width="2320" height="26" />
+        </mxCell>
+        <mxCell id="organization" value="&lt;b&gt;One organization • three execution planes&lt;/b&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#F7FAFD;strokeColor=#2374AB;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=23;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;verticalAlign=top;spacingTop=12;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="170" width="2320" height="160" />
+        </mxCell>
+        <mxCell id="register" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="organization">
+          <mxGeometry as="geometry" x="25" y="55" width="730" height="80" />
+        </mxCell>
+        <mxCell id="register-text" value="&lt;b&gt;Control Plane organization registration&lt;/b&gt;&lt;br&gt;Select environment → connect account → register supplied provider references" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#A4B6C8;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=17;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="register">
+          <mxGeometry as="geometry" x="0" y="0" width="730" height="80" />
+        </mxCell>
+        <mxCell id="security" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="organization">
+          <mxGeometry as="geometry" x="860" y="55" width="640" height="80" />
+        </mxCell>
+        <mxCell id="security-text" value="&lt;b&gt;Security team&lt;/b&gt;&lt;br&gt;Create Agent / Gateway Tools apps and AWS credential providers" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#A4B6C8;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=17;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="security">
+          <mxGeometry as="geometry" x="0" y="0" width="640" height="80" />
+        </mxCell>
+        <mxCell id="scope" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="organization">
+          <mxGeometry as="geometry" x="1610" y="55" width="680" height="80" />
+        </mxCell>
+        <mxCell id="scope-text" value="&lt;b&gt;Environment isolation&lt;/b&gt;&lt;br&gt;Distinct Entra app IDs, secrets and credential-provider references" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#A4B6C8;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=17;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="scope">
+          <mxGeometry as="geometry" x="0" y="0" width="680" height="80" />
+        </mxCell>
+        <mxCell id="dev" value="&lt;b&gt;Dev execution plane&lt;/b&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFFEFA;strokeColor=#C87524;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=24;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;verticalAlign=top;spacingTop=12;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="380" width="740" height="990" />
+        </mxCell>
+        <mxCell id="dev-entra" value="&lt;b&gt;Microsoft Entra tenant • Dev app pair&lt;/b&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#F6F0FC;strokeColor=#7B4AB0;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=20;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;verticalAlign=top;spacingTop=12;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="dev">
+          <mxGeometry as="geometry" x="25" y="65" width="690" height="300" />
+        </mxCell>
+        <mxCell id="dev-app-agent" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="dev-entra">
+          <mxGeometry as="geometry" x="25" y="65" width="300" height="125" />
+        </mxCell>
+        <mxCell id="dev-app-agent-text" value="&lt;b&gt;Dev Agent app&lt;/b&gt;&lt;br&gt;Security-owned&lt;br&gt;Dedicated client ID / secret" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#A4B6C8;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=17;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="dev-app-agent">
+          <mxGeometry as="geometry" x="0" y="0" width="300" height="125" />
+        </mxCell>
+        <mxCell id="dev-app-tools" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="dev-entra">
+          <mxGeometry as="geometry" x="365" y="65" width="300" height="125" />
+        </mxCell>
+        <mxCell id="dev-app-tools-text" value="&lt;b&gt;Dev Gateway Tools app&lt;/b&gt;&lt;br&gt;Security-owned&lt;br&gt;Dedicated client ID / secret" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#A4B6C8;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=16;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="dev-app-tools">
+          <mxGeometry as="geometry" x="0" y="0" width="300" height="125" />
+        </mxCell>
+        <mxCell id="dev-entra-note" value="This pair is separate from the UAT and Production pairs." style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#53677C;fontFamily=DejaVu Sans;fontSize=16;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;spacing=0;" vertex="1" parent="dev-entra">
+          <mxGeometry as="geometry" x="25" y="230" width="640" height="45" />
+        </mxCell>
+        <mxCell id="dev-account" value="&lt;b&gt;AWS Dev account • Non-production&lt;/b&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFF8EA;strokeColor=#C87524;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=20;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;verticalAlign=top;spacingTop=12;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="dev">
+          <mxGeometry as="geometry" x="25" y="420" width="690" height="540" />
+        </mxCell>
+        <mxCell id="dev-provider-agent" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="dev-account">
+          <mxGeometry as="geometry" x="25" y="70" width="300" height="160" />
+        </mxCell>
+        <mxCell id="dev-provider-agent-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.bedrock_agentcore;fillColor=#DD344C;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="dev-provider-agent">
+          <mxGeometry as="geometry" x="115" y="0" width="65" height="65" />
+        </mxCell>
+        <mxCell id="dev-provider-agent-text" value="&lt;b&gt;Agent credential provider&lt;/b&gt;&lt;br&gt;Entra app credential&lt;br&gt;Created by security" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=15;spacing=1;align=center;verticalAlign=middle;" vertex="1" parent="dev-provider-agent">
+          <mxGeometry as="geometry" x="5" y="85" width="290" height="75" />
+        </mxCell>
+        <mxCell id="dev-provider-tools" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="dev-account">
+          <mxGeometry as="geometry" x="365" y="70" width="300" height="160" />
+        </mxCell>
+        <mxCell id="dev-provider-tools-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.bedrock_agentcore;fillColor=#DD344C;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="dev-provider-tools">
+          <mxGeometry as="geometry" x="115" y="0" width="65" height="65" />
+        </mxCell>
+        <mxCell id="dev-provider-tools-text" value="&lt;b&gt;Gateway Tools provider&lt;/b&gt;&lt;br&gt;Entra app credential&lt;br&gt;Created by security" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=15;spacing=1;align=center;verticalAlign=middle;" vertex="1" parent="dev-provider-tools">
+          <mxGeometry as="geometry" x="5" y="85" width="290" height="75" />
+        </mxCell>
+        <mxCell id="dev-roles" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="dev-account">
+          <mxGeometry as="geometry" x="25" y="280" width="640" height="105" />
+        </mxCell>
+        <mxCell id="dev-roles-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.role;fillColor=#DD344C;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="dev-roles">
+          <mxGeometry as="geometry" x="12" y="18.5" width="68" height="68" />
+        </mxCell>
+        <mxCell id="dev-roles-text" value="&lt;b&gt;Environment-specific IAM roles&lt;/b&gt;&lt;br&gt;ControlPlane-Management&lt;br&gt;ControlPlane-Execution-Agent • ControlPlane-Execution-Gateway" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=15;spacing=1;align=center;verticalAlign=middle;" vertex="1" parent="dev-roles">
+          <mxGeometry as="geometry" x="95" y="5" width="540" height="95" />
+        </mxCell>
+        <mxCell id="dev-resources" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="dev-account">
+          <mxGeometry as="geometry" x="25" y="410" width="640" height="100" />
+        </mxCell>
+        <mxCell id="dev-resources-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.bedrock_agentcore;fillColor=#01A88D;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="dev-resources">
+          <mxGeometry as="geometry" x="12" y="16.0" width="68" height="68" />
+        </mxCell>
+        <mxCell id="dev-resources-text" value="&lt;b&gt;Execution-account resources&lt;/b&gt;&lt;br&gt;Harness / Runtime • Gateway / Toolkit&lt;br&gt;Future: Browser • Code Interpreter • Memory • Evaluations" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=16;spacing=1;align=center;verticalAlign=middle;" vertex="1" parent="dev-resources">
+          <mxGeometry as="geometry" x="95" y="5" width="540" height="90" />
+        </mxCell>
+        <mxCell id="uat" value="&lt;b&gt;UAT execution plane&lt;/b&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFFEFA;strokeColor=#C87524;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=24;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;verticalAlign=top;spacingTop=12;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="830" y="380" width="740" height="990" />
+        </mxCell>
+        <mxCell id="uat-entra" value="&lt;b&gt;Microsoft Entra tenant • UAT app pair&lt;/b&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#F6F0FC;strokeColor=#7B4AB0;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=20;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;verticalAlign=top;spacingTop=12;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="uat">
+          <mxGeometry as="geometry" x="25" y="65" width="690" height="300" />
+        </mxCell>
+        <mxCell id="uat-app-agent" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="uat-entra">
+          <mxGeometry as="geometry" x="25" y="65" width="300" height="125" />
+        </mxCell>
+        <mxCell id="uat-app-agent-text" value="&lt;b&gt;UAT Agent app&lt;/b&gt;&lt;br&gt;Security-owned&lt;br&gt;Dedicated client ID / secret" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#A4B6C8;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=17;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="uat-app-agent">
+          <mxGeometry as="geometry" x="0" y="0" width="300" height="125" />
+        </mxCell>
+        <mxCell id="uat-app-tools" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="uat-entra">
+          <mxGeometry as="geometry" x="365" y="65" width="300" height="125" />
+        </mxCell>
+        <mxCell id="uat-app-tools-text" value="&lt;b&gt;UAT Gateway Tools app&lt;/b&gt;&lt;br&gt;Security-owned&lt;br&gt;Dedicated client ID / secret" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#A4B6C8;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=16;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="uat-app-tools">
+          <mxGeometry as="geometry" x="0" y="0" width="300" height="125" />
+        </mxCell>
+        <mxCell id="uat-entra-note" value="This pair is separate from the Dev and Production pairs." style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#53677C;fontFamily=DejaVu Sans;fontSize=16;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;spacing=0;" vertex="1" parent="uat-entra">
+          <mxGeometry as="geometry" x="25" y="230" width="640" height="45" />
+        </mxCell>
+        <mxCell id="uat-account" value="&lt;b&gt;AWS UAT account • Non-production&lt;/b&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFF8EA;strokeColor=#C87524;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=20;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;verticalAlign=top;spacingTop=12;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="uat">
+          <mxGeometry as="geometry" x="25" y="420" width="690" height="540" />
+        </mxCell>
+        <mxCell id="uat-provider-agent" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="uat-account">
+          <mxGeometry as="geometry" x="25" y="70" width="300" height="160" />
+        </mxCell>
+        <mxCell id="uat-provider-agent-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.bedrock_agentcore;fillColor=#DD344C;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="uat-provider-agent">
+          <mxGeometry as="geometry" x="115" y="0" width="65" height="65" />
+        </mxCell>
+        <mxCell id="uat-provider-agent-text" value="&lt;b&gt;Agent credential provider&lt;/b&gt;&lt;br&gt;Entra app credential&lt;br&gt;Created by security" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=15;spacing=1;align=center;verticalAlign=middle;" vertex="1" parent="uat-provider-agent">
+          <mxGeometry as="geometry" x="5" y="85" width="290" height="75" />
+        </mxCell>
+        <mxCell id="uat-provider-tools" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="uat-account">
+          <mxGeometry as="geometry" x="365" y="70" width="300" height="160" />
+        </mxCell>
+        <mxCell id="uat-provider-tools-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.bedrock_agentcore;fillColor=#DD344C;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="uat-provider-tools">
+          <mxGeometry as="geometry" x="115" y="0" width="65" height="65" />
+        </mxCell>
+        <mxCell id="uat-provider-tools-text" value="&lt;b&gt;Gateway Tools provider&lt;/b&gt;&lt;br&gt;Entra app credential&lt;br&gt;Created by security" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=15;spacing=1;align=center;verticalAlign=middle;" vertex="1" parent="uat-provider-tools">
+          <mxGeometry as="geometry" x="5" y="85" width="290" height="75" />
+        </mxCell>
+        <mxCell id="uat-roles" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="uat-account">
+          <mxGeometry as="geometry" x="25" y="280" width="640" height="105" />
+        </mxCell>
+        <mxCell id="uat-roles-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.role;fillColor=#DD344C;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="uat-roles">
+          <mxGeometry as="geometry" x="12" y="18.5" width="68" height="68" />
+        </mxCell>
+        <mxCell id="uat-roles-text" value="&lt;b&gt;Environment-specific IAM roles&lt;/b&gt;&lt;br&gt;ControlPlane-Management&lt;br&gt;ControlPlane-Execution-Agent • ControlPlane-Execution-Gateway" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=15;spacing=1;align=center;verticalAlign=middle;" vertex="1" parent="uat-roles">
+          <mxGeometry as="geometry" x="95" y="5" width="540" height="95" />
+        </mxCell>
+        <mxCell id="uat-resources" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="uat-account">
+          <mxGeometry as="geometry" x="25" y="410" width="640" height="100" />
+        </mxCell>
+        <mxCell id="uat-resources-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.bedrock_agentcore;fillColor=#01A88D;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="uat-resources">
+          <mxGeometry as="geometry" x="12" y="16.0" width="68" height="68" />
+        </mxCell>
+        <mxCell id="uat-resources-text" value="&lt;b&gt;Execution-account resources&lt;/b&gt;&lt;br&gt;Harness / Runtime • Gateway / Toolkit&lt;br&gt;Future: Browser • Code Interpreter • Memory • Evaluations" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=16;spacing=1;align=center;verticalAlign=middle;" vertex="1" parent="uat-resources">
+          <mxGeometry as="geometry" x="95" y="5" width="540" height="90" />
+        </mxCell>
+        <mxCell id="prod" value="&lt;b&gt;Production execution plane&lt;/b&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFFEFA;strokeColor=#C87524;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=24;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;verticalAlign=top;spacingTop=12;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1620" y="380" width="740" height="990" />
+        </mxCell>
+        <mxCell id="prod-entra" value="&lt;b&gt;Microsoft Entra tenant • Production app pair&lt;/b&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#F6F0FC;strokeColor=#7B4AB0;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=20;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;verticalAlign=top;spacingTop=12;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="prod">
+          <mxGeometry as="geometry" x="25" y="65" width="690" height="300" />
+        </mxCell>
+        <mxCell id="prod-app-agent" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="prod-entra">
+          <mxGeometry as="geometry" x="25" y="65" width="300" height="125" />
+        </mxCell>
+        <mxCell id="prod-app-agent-text" value="&lt;b&gt;Production Agent app&lt;/b&gt;&lt;br&gt;Security-owned&lt;br&gt;Dedicated client ID / secret" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#A4B6C8;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=17;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="prod-app-agent">
+          <mxGeometry as="geometry" x="0" y="0" width="300" height="125" />
+        </mxCell>
+        <mxCell id="prod-app-tools" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="prod-entra">
+          <mxGeometry as="geometry" x="365" y="65" width="300" height="125" />
+        </mxCell>
+        <mxCell id="prod-app-tools-text" value="&lt;b&gt;Prod Gateway Tools app&lt;/b&gt;&lt;br&gt;Security-owned&lt;br&gt;Dedicated client ID / secret" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#A4B6C8;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=16;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="prod-app-tools">
+          <mxGeometry as="geometry" x="0" y="0" width="300" height="125" />
+        </mxCell>
+        <mxCell id="prod-entra-note" value="This pair is separate from the Dev and UAT pairs." style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#53677C;fontFamily=DejaVu Sans;fontSize=16;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;spacing=0;" vertex="1" parent="prod-entra">
+          <mxGeometry as="geometry" x="25" y="230" width="640" height="45" />
+        </mxCell>
+        <mxCell id="prod-account" value="&lt;b&gt;AWS Production account • Production&lt;/b&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFF8EA;strokeColor=#C87524;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=20;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;verticalAlign=top;spacingTop=12;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="prod">
+          <mxGeometry as="geometry" x="25" y="420" width="690" height="540" />
+        </mxCell>
+        <mxCell id="prod-provider-agent" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="prod-account">
+          <mxGeometry as="geometry" x="25" y="70" width="300" height="160" />
+        </mxCell>
+        <mxCell id="prod-provider-agent-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.bedrock_agentcore;fillColor=#DD344C;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="prod-provider-agent">
+          <mxGeometry as="geometry" x="115" y="0" width="65" height="65" />
+        </mxCell>
+        <mxCell id="prod-provider-agent-text" value="&lt;b&gt;Agent credential provider&lt;/b&gt;&lt;br&gt;Entra app credential&lt;br&gt;Created by security" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=15;spacing=1;align=center;verticalAlign=middle;" vertex="1" parent="prod-provider-agent">
+          <mxGeometry as="geometry" x="5" y="85" width="290" height="75" />
+        </mxCell>
+        <mxCell id="prod-provider-tools" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="prod-account">
+          <mxGeometry as="geometry" x="365" y="70" width="300" height="160" />
+        </mxCell>
+        <mxCell id="prod-provider-tools-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.bedrock_agentcore;fillColor=#DD344C;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="prod-provider-tools">
+          <mxGeometry as="geometry" x="115" y="0" width="65" height="65" />
+        </mxCell>
+        <mxCell id="prod-provider-tools-text" value="&lt;b&gt;Gateway Tools provider&lt;/b&gt;&lt;br&gt;Entra app credential&lt;br&gt;Created by security" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=15;spacing=1;align=center;verticalAlign=middle;" vertex="1" parent="prod-provider-tools">
+          <mxGeometry as="geometry" x="5" y="85" width="290" height="75" />
+        </mxCell>
+        <mxCell id="prod-roles" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="prod-account">
+          <mxGeometry as="geometry" x="25" y="280" width="640" height="105" />
+        </mxCell>
+        <mxCell id="prod-roles-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.role;fillColor=#DD344C;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="prod-roles">
+          <mxGeometry as="geometry" x="12" y="18.5" width="68" height="68" />
+        </mxCell>
+        <mxCell id="prod-roles-text" value="&lt;b&gt;Environment-specific IAM roles&lt;/b&gt;&lt;br&gt;ControlPlane-Management&lt;br&gt;ControlPlane-Execution-Agent • ControlPlane-Execution-Gateway" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=15;spacing=1;align=center;verticalAlign=middle;" vertex="1" parent="prod-roles">
+          <mxGeometry as="geometry" x="95" y="5" width="540" height="95" />
+        </mxCell>
+        <mxCell id="prod-resources" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="prod-account">
+          <mxGeometry as="geometry" x="25" y="410" width="640" height="100" />
+        </mxCell>
+        <mxCell id="prod-resources-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.bedrock_agentcore;fillColor=#01A88D;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="prod-resources">
+          <mxGeometry as="geometry" x="12" y="16.0" width="68" height="68" />
+        </mxCell>
+        <mxCell id="prod-resources-text" value="&lt;b&gt;Execution-account resources&lt;/b&gt;&lt;br&gt;Harness / Runtime • Gateway / Toolkit&lt;br&gt;Future: Browser • Code Interpreter • Memory • Evaluations" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=16;spacing=1;align=center;verticalAlign=middle;" vertex="1" parent="prod-resources">
+          <mxGeometry as="geometry" x="95" y="5" width="540" height="90" />
+        </mxCell>
+        <mxCell id="onboarding" value="&lt;b&gt;Execution-plane registration contract&lt;/b&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#F2F7FC;strokeColor=#2374AB;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=22;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;verticalAlign=top;spacingTop=12;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="1410" width="2320" height="225" />
+        </mxCell>
+        <mxCell id="onboarding-text" value="1. Security prepares the two Entra apps and corresponding AWS credential providers for the selected environment.&lt;br&gt;2. The platform team registers the environment under the organization and connects its dedicated AWS execution account.&lt;br&gt;3. Control Plane stores account / environment metadata and credential-provider references; secret-value handling follows the approved security design.&lt;br&gt;4. ControlPlane-App assumes the appropriate account-specific role to provision resources or invoke an agent / Toolkit.&lt;br&gt;Control Plane user SSO remains a separate identity concern from the environment-specific Agent and Gateway Tools app pairs." style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#53677C;fontFamily=DejaVu Sans;fontSize=18;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;spacing=0;" vertex="1" parent="onboarding">
+          <mxGeometry as="geometry" x="30" y="60" width="2260" height="130" />
+        </mxCell>
+        <mxCell id="supply-providers" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#7B4AB0;strokeWidth=2;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;exitX=0.0;exitY=0.5;exitDx=0;exitDy=0;entryX=1.0;entryY=0.5;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="security" target="register">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="supply-providers-label" value="Supply" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=none;fontFamily=DejaVu Sans;fontSize=15;fontColor=#7B4AB0;spacing=3;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="805" y="236" width="85" height="25" />
+        </mxCell>
+        <mxCell id="dev-secret-agent" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#7B4AB0;strokeWidth=2;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;exitX=0.5;exitY=1.0;exitDx=0;exitDy=0;entryX=0.5;entryY=0.0;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;dashed=1;dashPattern=6 4;" edge="1" parent="1" source="dev-app-agent" target="dev-provider-agent">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="240" y="660" />
+              <mxPoint x="55" y="660" />
+              <mxPoint x="55" y="850" />
+              <mxPoint x="240" y="850" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dev-secret-agent-label" value="Security provisions" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=none;fontFamily=DejaVu Sans;fontSize=15;fontColor=#7B4AB0;spacing=3;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="80" y="757" width="270" height="27" />
+        </mxCell>
+        <mxCell id="dev-secret-tools" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#7B4AB0;strokeWidth=2;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;exitX=0.5;exitY=1.0;exitDx=0;exitDy=0;entryX=0.5;entryY=0.0;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;dashed=1;dashPattern=6 4;" edge="1" parent="1" source="dev-app-tools" target="dev-provider-tools">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="580" y="660" />
+              <mxPoint x="765" y="660" />
+              <mxPoint x="765" y="850" />
+              <mxPoint x="580" y="850" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dev-secret-tools-label" value="Security provisions" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=none;fontFamily=DejaVu Sans;fontSize=15;fontColor=#7B4AB0;spacing=3;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="440" y="757" width="270" height="27" />
+        </mxCell>
+        <mxCell id="uat-secret-agent" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#7B4AB0;strokeWidth=2;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;exitX=0.5;exitY=1.0;exitDx=0;exitDy=0;entryX=0.5;entryY=0.0;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;dashed=1;dashPattern=6 4;" edge="1" parent="1" source="uat-app-agent" target="uat-provider-agent">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="1030" y="660" />
+              <mxPoint x="845" y="660" />
+              <mxPoint x="845" y="850" />
+              <mxPoint x="1030" y="850" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uat-secret-agent-label" value="Security provisions" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=none;fontFamily=DejaVu Sans;fontSize=15;fontColor=#7B4AB0;spacing=3;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="870" y="757" width="270" height="27" />
+        </mxCell>
+        <mxCell id="uat-secret-tools" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#7B4AB0;strokeWidth=2;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;exitX=0.5;exitY=1.0;exitDx=0;exitDy=0;entryX=0.5;entryY=0.0;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;dashed=1;dashPattern=6 4;" edge="1" parent="1" source="uat-app-tools" target="uat-provider-tools">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="1370" y="660" />
+              <mxPoint x="1555" y="660" />
+              <mxPoint x="1555" y="850" />
+              <mxPoint x="1370" y="850" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uat-secret-tools-label" value="Security provisions" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=none;fontFamily=DejaVu Sans;fontSize=15;fontColor=#7B4AB0;spacing=3;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1230" y="757" width="270" height="27" />
+        </mxCell>
+        <mxCell id="prod-secret-agent" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#7B4AB0;strokeWidth=2;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;exitX=0.5;exitY=1.0;exitDx=0;exitDy=0;entryX=0.5;entryY=0.0;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;dashed=1;dashPattern=6 4;" edge="1" parent="1" source="prod-app-agent" target="prod-provider-agent">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="1820" y="660" />
+              <mxPoint x="1635" y="660" />
+              <mxPoint x="1635" y="850" />
+              <mxPoint x="1820" y="850" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="prod-secret-agent-label" value="Security provisions" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=none;fontFamily=DejaVu Sans;fontSize=15;fontColor=#7B4AB0;spacing=3;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1660" y="757" width="270" height="27" />
+        </mxCell>
+        <mxCell id="prod-secret-tools" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#7B4AB0;strokeWidth=2;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;exitX=0.5;exitY=1.0;exitDx=0;exitDy=0;entryX=0.5;entryY=0.0;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;dashed=1;dashPattern=6 4;" edge="1" parent="1" source="prod-app-tools" target="prod-provider-tools">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="2160" y="660" />
+              <mxPoint x="2345" y="660" />
+              <mxPoint x="2345" y="850" />
+              <mxPoint x="2160" y="850" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="prod-secret-tools-label" value="Security provisions" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=none;fontFamily=DejaVu Sans;fontSize=15;fontColor=#7B4AB0;spacing=3;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="2020" y="757" width="270" height="27" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="03-Role-flows-and-observability" name="03 Role flows and observability">
+    <mxGraphModel dx="2400" dy="1900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2400" pageHeight="1900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="IAM invocation, runtime access and observability" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#142D4E;fontFamily=DejaVu Sans;fontSize=30;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;spacing=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="22" width="2050" height="46" />
+        </mxCell>
+        <mxCell id="status" value="DRAFT v0.3 • CONFIDENTIAL&lt;br&gt;26 Oct 2026 • Guardian" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#A33A43;fontFamily=DejaVu Sans;fontSize=14;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;spacing=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="2090" y="25" width="270" height="40" />
+        </mxCell>
+        <mxCell id="rule" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#142D4E;strokeColor=#142D4E;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=17;spacing=12;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="84" width="2320" height="3" />
+        </mxCell>
+        <mxCell id="subtitle" value="Confirmed role semantics • separate identity responsibilities • OTEL export through a configured ADOT redaction pipeline" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#53677C;fontFamily=DejaVu Sans;fontSize=17;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;spacing=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="100" width="2320" height="40" />
+        </mxCell>
+        <mxCell id="footer" value="GUARDIAN AI PLATFORM  |  Native AWS shapes and editable connectors  |  [P] = proposed / to confirm  |  3 / 4" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#53677C;fontFamily=DejaVu Sans;fontSize=14;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;spacing=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="1860" width="2320" height="26" />
+        </mxCell>
+        <mxCell id="roleflow" value="&lt;b&gt;1  |  Control Plane assumes purpose-specific roles in the execution account&lt;/b&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FCFBFE;strokeColor=#7B4AB0;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=22;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;verticalAlign=top;spacingTop=12;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="170" width="2320" height="560" />
+        </mxCell>
+        <mxCell id="platform-role" value="&lt;b&gt;AWS Account A&lt;/b&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#F2F7FC;strokeColor=#2374AB;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=21;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;verticalAlign=top;spacingTop=12;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="roleflow">
+          <mxGeometry as="geometry" x="25" y="70" width="520" height="430" />
+        </mxCell>
+        <mxCell id="pods" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="platform-role">
+          <mxGeometry as="geometry" x="25" y="70" width="470" height="120" />
+        </mxCell>
+        <mxCell id="pods-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.eks;fillColor=#ED7100;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="pods">
+          <mxGeometry as="geometry" x="12" y="26.0" width="68" height="68" />
+        </mxCell>
+        <mxCell id="pods-text" value="&lt;b&gt;Kubernetes UI / API&lt;/b&gt;&lt;br&gt;Control Plane containers" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=20;spacing=1;align=center;verticalAlign=middle;" vertex="1" parent="pods">
+          <mxGeometry as="geometry" x="95" y="5" width="370" height="110" />
+        </mxCell>
+        <mxCell id="app" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="platform-role">
+          <mxGeometry as="geometry" x="25" y="260" width="470" height="110" />
+        </mxCell>
+        <mxCell id="app-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.role;fillColor=#DD344C;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="app">
+          <mxGeometry as="geometry" x="12" y="21.0" width="68" height="68" />
+        </mxCell>
+        <mxCell id="app-text" value="&lt;b&gt;ControlPlane-App&lt;/b&gt;&lt;br&gt;Assumed by Control Plane containers" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=17;spacing=1;align=center;verticalAlign=middle;" vertex="1" parent="app">
+          <mxGeometry as="geometry" x="95" y="5" width="370" height="100" />
+        </mxCell>
+        <mxCell id="exec-role" value="&lt;b&gt;Selected environment AWS account — Dev, UAT or Production&lt;/b&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFF9ED;strokeColor=#C87524;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=21;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;verticalAlign=top;spacingTop=12;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="roleflow">
+          <mxGeometry as="geometry" x="680" y="70" width="1610" height="450" />
+        </mxCell>
+        <mxCell id="manage" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="exec-role">
+          <mxGeometry as="geometry" x="30" y="70" width="650" height="90" />
+        </mxCell>
+        <mxCell id="manage-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.role;fillColor=#DD344C;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="manage">
+          <mxGeometry as="geometry" x="12" y="11.0" width="68" height="68" />
+        </mxCell>
+        <mxCell id="manage-text" value="&lt;b&gt;ControlPlane-Management&lt;/b&gt;&lt;br&gt;Create / update AWS resources" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=18;spacing=1;align=center;verticalAlign=middle;" vertex="1" parent="manage">
+          <mxGeometry as="geometry" x="95" y="5" width="550" height="80" />
+        </mxCell>
+        <mxCell id="manage-action" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="exec-role">
+          <mxGeometry as="geometry" x="840" y="70" width="740" height="90" />
+        </mxCell>
+        <mxCell id="manage-action-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.bedrock_agentcore;fillColor=#01A88D;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="manage-action">
+          <mxGeometry as="geometry" x="12" y="11.0" width="68" height="68" />
+        </mxCell>
+        <mxCell id="manage-action-text" value="&lt;b&gt;Create / update AWS resources&lt;/b&gt;&lt;br&gt;Provision Harness, Gateway / Toolkit and future AgentCore services" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=17;spacing=1;align=center;verticalAlign=middle;" vertex="1" parent="manage-action">
+          <mxGeometry as="geometry" x="95" y="5" width="640" height="80" />
+        </mxCell>
+        <mxCell id="invoke-agent" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="exec-role">
+          <mxGeometry as="geometry" x="30" y="210" width="650" height="90" />
+        </mxCell>
+        <mxCell id="invoke-agent-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.role;fillColor=#DD344C;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="invoke-agent">
+          <mxGeometry as="geometry" x="12" y="11.0" width="68" height="68" />
+        </mxCell>
+        <mxCell id="invoke-agent-text" value="&lt;b&gt;ControlPlane-Execution-Agent&lt;/b&gt;&lt;br&gt;Invoke a Harness agent" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=18;spacing=1;align=center;verticalAlign=middle;" vertex="1" parent="invoke-agent">
+          <mxGeometry as="geometry" x="95" y="5" width="550" height="80" />
+        </mxCell>
+        <mxCell id="invoke-agent-action" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="exec-role">
+          <mxGeometry as="geometry" x="840" y="210" width="740" height="90" />
+        </mxCell>
+        <mxCell id="invoke-agent-action-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.bedrock_agentcore;fillColor=#01A88D;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="invoke-agent-action">
+          <mxGeometry as="geometry" x="12" y="11.0" width="68" height="68" />
+        </mxCell>
+        <mxCell id="invoke-agent-action-text" value="&lt;b&gt;Invoke a Harness agent&lt;/b&gt;&lt;br&gt;Caller authorization for the agent invocation API" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=17;spacing=1;align=center;verticalAlign=middle;" vertex="1" parent="invoke-agent-action">
+          <mxGeometry as="geometry" x="95" y="5" width="640" height="80" />
+        </mxCell>
+        <mxCell id="invoke-gateway" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="exec-role">
+          <mxGeometry as="geometry" x="30" y="350" width="650" height="90" />
+        </mxCell>
+        <mxCell id="invoke-gateway-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.role;fillColor=#DD344C;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="invoke-gateway">
+          <mxGeometry as="geometry" x="12" y="11.0" width="68" height="68" />
+        </mxCell>
+        <mxCell id="invoke-gateway-text" value="&lt;b&gt;ControlPlane-Execution-Gateway&lt;/b&gt;&lt;br&gt;Invoke Gateway / Toolkit" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=18;spacing=1;align=center;verticalAlign=middle;" vertex="1" parent="invoke-gateway">
+          <mxGeometry as="geometry" x="95" y="5" width="550" height="80" />
+        </mxCell>
+        <mxCell id="invoke-gateway-action" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="exec-role">
+          <mxGeometry as="geometry" x="840" y="350" width="740" height="90" />
+        </mxCell>
+        <mxCell id="invoke-gateway-action-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.bedrock_agentcore;fillColor=#01A88D;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="invoke-gateway-action">
+          <mxGeometry as="geometry" x="12" y="11.0" width="68" height="68" />
+        </mxCell>
+        <mxCell id="invoke-gateway-action-text" value="&lt;b&gt;Invoke Gateway / Toolkit&lt;/b&gt;&lt;br&gt;Caller authorization for the Gateway invocation API" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=17;spacing=1;align=center;verticalAlign=middle;" vertex="1" parent="invoke-gateway-action">
+          <mxGeometry as="geometry" x="95" y="5" width="640" height="80" />
+        </mxCell>
+        <mxCell id="sts-label" value="STS&lt;br&gt;AssumeRole" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#7B4AB0;fontFamily=DejaVu Sans;fontSize=14;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;spacing=0;" vertex="1" parent="roleflow">
+          <mxGeometry as="geometry" x="625" y="235" width="100" height="40" />
+        </mxCell>
+        <mxCell id="role-clarity" value="These three roles are assumed by the Control Plane for API calls. Runtime / Gateway service execution roles and downstream permissions are separate and remain to be specified." style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#53677C;fontFamily=DejaVu Sans;fontSize=16;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;spacing=0;" vertex="1" parent="roleflow">
+          <mxGeometry as="geometry" x="35" y="530" width="2240" height="28" />
+        </mxCell>
+        <mxCell id="runtime" value="&lt;b&gt;2  |  Account B runtime — direct Bedrock model access and Toolkit calls&lt;/b&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#F4FAF5;strokeColor=#16806D;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=22;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;verticalAlign=top;spacingTop=12;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="770" width="2320" height="340" />
+        </mxCell>
+        <mxCell id="runtime-agent" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="runtime">
+          <mxGeometry as="geometry" x="40" y="100" width="490" height="130" />
+        </mxCell>
+        <mxCell id="runtime-agent-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.bedrock_agentcore;fillColor=#01A88D;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="runtime-agent">
+          <mxGeometry as="geometry" x="12" y="31.0" width="68" height="68" />
+        </mxCell>
+        <mxCell id="runtime-agent-text" value="&lt;b&gt;Harness agent&lt;/b&gt;&lt;br&gt;Agent identity / credentials&lt;br&gt;Tool calls and model requests" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=19;spacing=1;align=center;verticalAlign=middle;" vertex="1" parent="runtime-agent">
+          <mxGeometry as="geometry" x="95" y="5" width="390" height="120" />
+        </mxCell>
+        <mxCell id="runtime-gateway" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="runtime">
+          <mxGeometry as="geometry" x="760" y="70" width="620" height="100" />
+        </mxCell>
+        <mxCell id="runtime-gateway-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.bedrock_agentcore;fillColor=#01A88D;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="runtime-gateway">
+          <mxGeometry as="geometry" x="12" y="16.0" width="68" height="68" />
+        </mxCell>
+        <mxCell id="runtime-gateway-text" value="&lt;b&gt;AgentCore Gateway / Toolkit&lt;/b&gt;&lt;br&gt;Tool authorization and target authentication" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=18;spacing=1;align=center;verticalAlign=middle;" vertex="1" parent="runtime-gateway">
+          <mxGeometry as="geometry" x="95" y="5" width="520" height="90" />
+        </mxCell>
+        <mxCell id="runtime-targets" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="runtime">
+          <mxGeometry as="geometry" x="1590" y="70" width="680" height="100" />
+        </mxCell>
+        <mxCell id="runtime-targets-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.lambda;fillColor=#ED7100;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="runtime-targets">
+          <mxGeometry as="geometry" x="12" y="16.0" width="68" height="68" />
+        </mxCell>
+        <mxCell id="runtime-targets-text" value="&lt;b&gt;Approved tools and downstream services&lt;/b&gt;&lt;br&gt;Lambda / API / MCP implementations" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=18;spacing=1;align=center;verticalAlign=middle;" vertex="1" parent="runtime-targets">
+          <mxGeometry as="geometry" x="95" y="5" width="580" height="90" />
+        </mxCell>
+        <mxCell id="otel" value="&lt;b&gt;3  |  Harness observability — Agent → ADOT → Arize&lt;/b&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#F1F9FA;strokeColor=#168394;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=22;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;verticalAlign=top;spacingTop=12;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="1150" width="2320" height="320" />
+        </mxCell>
+        <mxCell id="instrumented" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="otel">
+          <mxGeometry as="geometry" x="30" y="80" width="560" height="150" />
+        </mxCell>
+        <mxCell id="instrumented-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.bedrock_agentcore;fillColor=#01A88D;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="instrumented">
+          <mxGeometry as="geometry" x="12" y="41.0" width="68" height="68" />
+        </mxCell>
+        <mxCell id="instrumented-text" value="&lt;b&gt;Harness OTEL instrumentation&lt;/b&gt;&lt;br&gt;Configure OTLP export destination&lt;br&gt;Metrics / traces as configured" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=19;spacing=1;align=center;verticalAlign=middle;" vertex="1" parent="instrumented">
+          <mxGeometry as="geometry" x="95" y="5" width="460" height="140" />
+        </mxCell>
+        <mxCell id="collector" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="otel">
+          <mxGeometry as="geometry" x="820" y="80" width="650" height="150" />
+        </mxCell>
+        <mxCell id="collector-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.distro_for_opentelemetry;fillColor=#E7157B;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="collector">
+          <mxGeometry as="geometry" x="12" y="41.0" width="68" height="68" />
+        </mxCell>
+        <mxCell id="collector-text" value="&lt;b&gt;AWS ADOT Collector&lt;/b&gt;&lt;br&gt;Receive OTEL telemetry&lt;br&gt;Configured PII / confidential-data redaction&lt;br&gt;Export approved, sanitized telemetry" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=18;spacing=1;align=center;verticalAlign=middle;" vertex="1" parent="collector">
+          <mxGeometry as="geometry" x="95" y="5" width="550" height="140" />
+        </mxCell>
+        <mxCell id="arize" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="otel">
+          <mxGeometry as="geometry" x="1700" y="80" width="580" height="150" />
+        </mxCell>
+        <mxCell id="arize-text" value="&lt;b&gt;Arize&lt;/b&gt;&lt;br&gt;Agent observability&lt;br&gt;Signal ingestion / exporter configuration: TBD" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#A4B6C8;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=19;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="arize">
+          <mxGeometry as="geometry" x="0" y="0" width="580" height="150" />
+        </mxCell>
+        <mxCell id="otel-note" value="ADOT placement is not yet specified. Redaction is an explicitly configured processing step; validate policies and supported signal/exporter combinations. S3 is not in this flow." style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#53677C;fontFamily=DejaVu Sans;fontSize=16;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;spacing=0;" vertex="1" parent="otel">
+          <mxGeometry as="geometry" x="30" y="262" width="2250" height="30" />
+        </mxCell>
+        <mxCell id="review" value="&lt;b&gt;Governance evidence and remaining decisions&lt;/b&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FAFBFC;strokeColor=#AFBFCD;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=22;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;verticalAlign=top;spacingTop=12;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="1510" width="2320" height="290" />
+        </mxCell>
+        <mxCell id="review-text" value="Review the complete pattern and versioned provisioning / infrastructure code; deployments must conform to approved templates and configuration boundaries.&lt;br&gt;Security owns environment-specific Entra apps, secrets and AWS credential providers. Control Plane uses their supplied references.&lt;br&gt;Future execution-account services: AgentCore Browser, Code Interpreter, Memory and Evaluations; review each within the complete supported pattern.&lt;br&gt;Inference Gateway is part of the Control Plane API in Account A; Guardian apps in C and Claude Code in D call it with API keys, then it invokes Account A Bedrock.&lt;br&gt;Remaining decisions: EKS and Harness hosting, ingress and private routes, database engine / HA, service execution permissions and ADOT deployment / export policy.&lt;br&gt;AWS shape library: native draw.io AWS4 components. ADOT reference: https://aws-otel.github.io/docs/components/processors/" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#53677C;fontFamily=DejaVu Sans;fontSize=17;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;spacing=0;" vertex="1" parent="review">
+          <mxGeometry as="geometry" x="30" y="60" width="2250" height="175" />
+        </mxCell>
+        <mxCell id="runtime-bedrock-b" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="runtime">
+          <mxGeometry as="geometry" x="760" y="210" width="620" height="100" />
+        </mxCell>
+        <mxCell id="runtime-bedrock-b-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.bedrock;fillColor=#01A88D;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="runtime-bedrock-b">
+          <mxGeometry as="geometry" x="12" y="16.0" width="68" height="68" />
+        </mxCell>
+        <mxCell id="runtime-bedrock-b-text" value="&lt;b&gt;Amazon Bedrock — Account B&lt;/b&gt;&lt;br&gt;Model endpoints in the Harness execution account" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=18;spacing=1;align=center;verticalAlign=middle;" vertex="1" parent="runtime-bedrock-b">
+          <mxGeometry as="geometry" x="95" y="5" width="520" height="90" />
+        </mxCell>
+        <mxCell id="runtime-current-note" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="runtime">
+          <mxGeometry as="geometry" x="1590" y="210" width="680" height="100" />
+        </mxCell>
+        <mxCell id="runtime-current-note-text" value="&lt;b&gt;Current version&lt;/b&gt;&lt;br&gt;Harness calls Bedrock within Account B&lt;br&gt;Shared Inference Gateway consumers: see page 4" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#A4B6C8;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=18;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="runtime-current-note">
+          <mxGeometry as="geometry" x="0" y="0" width="680" height="100" />
+        </mxCell>
+        <mxCell id="podidentity" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#7B4AB0;strokeWidth=2;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;exitX=0.5;exitY=1.0;exitDx=0;exitDy=0;entryX=0.5;entryY=0.0;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;dashed=1;dashPattern=6 4;" edge="1" parent="1" source="pods" target="app">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="manage-assume" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#7B4AB0;strokeWidth=2;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;exitX=1.0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.0;entryY=0.5;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;dashed=1;dashPattern=6 4;" edge="1" parent="1" source="app" target="manage">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="650" y="555" />
+              <mxPoint x="650" y="355" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="manage-call" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#7B4AB0;strokeWidth=2;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;exitX=1.0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.0;entryY=0.5;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;dashed=1;dashPattern=6 4;" edge="1" parent="1" source="manage" target="manage-action">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="manage-call-label" value="AWS API" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=none;fontFamily=DejaVu Sans;fontSize=15;fontColor=#7B4AB0;spacing=3;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1415" y="326" width="130" height="25" />
+        </mxCell>
+        <mxCell id="invoke-agent-assume" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#7B4AB0;strokeWidth=2;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;exitX=1.0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.0;entryY=0.5;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;dashed=1;dashPattern=6 4;" edge="1" parent="1" source="app" target="invoke-agent">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="650" y="555" />
+              <mxPoint x="650" y="495" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="invoke-agent-call" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#16806D;strokeWidth=2;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;exitX=1.0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.0;entryY=0.5;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="invoke-agent" target="invoke-agent-action">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="invoke-agent-call-label" value="AWS API" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=none;fontFamily=DejaVu Sans;fontSize=15;fontColor=#16806D;spacing=3;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1415" y="466" width="130" height="25" />
+        </mxCell>
+        <mxCell id="invoke-gateway-assume" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#7B4AB0;strokeWidth=2;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;exitX=1.0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.0;entryY=0.5;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;dashed=1;dashPattern=6 4;" edge="1" parent="1" source="app" target="invoke-gateway">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="650" y="555" />
+              <mxPoint x="650" y="635" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="invoke-gateway-call" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#16806D;strokeWidth=2;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;exitX=1.0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.0;entryY=0.5;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="invoke-gateway" target="invoke-gateway-action">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="invoke-gateway-call-label" value="AWS API" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=none;fontFamily=DejaVu Sans;fontSize=15;fontColor=#16806D;spacing=3;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1415" y="606" width="130" height="25" />
+        </mxCell>
+        <mxCell id="tool-runtime" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#16806D;strokeWidth=2;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;exitX=1.0;exitY=0.23076923076923078;exitDx=0;exitDy=0;entryX=0.0;entryY=0.6;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="runtime-agent" target="runtime-gateway">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="tool-runtime-label" value="MCP / tool requests" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=none;fontFamily=DejaVu Sans;fontSize=15;fontColor=#16806D;spacing=3;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="600" y="867" width="170" height="28" />
+        </mxCell>
+        <mxCell id="tools-downstream" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#16806D;strokeWidth=2;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;exitX=1.0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.0;entryY=0.5;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="runtime-gateway" target="runtime-targets">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="tools-downstream-label" value="Per-target auth" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=none;fontFamily=DejaVu Sans;fontSize=15;fontColor=#16806D;spacing=3;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1445" y="857" width="160" height="28" />
+        </mxCell>
+        <mxCell id="otel-to-adot" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#168394;strokeWidth=2;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;exitX=1.0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.0;entryY=0.5;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="instrumented" target="collector">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="otel-to-adot-label" value="OTLP" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=none;fontFamily=DejaVu Sans;fontSize=15;fontColor=#168394;spacing=3;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="680" y="1267" width="130" height="28" />
+        </mxCell>
+        <mxCell id="adot-to-arize" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#168394;strokeWidth=2;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;exitX=1.0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.0;entryY=0.5;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="collector" target="arize">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="adot-to-arize-label" value="Redacted telemetry" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=none;fontFamily=DejaVu Sans;fontSize=15;fontColor=#168394;spacing=3;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1525" y="1267" width="195" height="28" />
+        </mxCell>
+        <mxCell id="model-request-direct" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#16806D;strokeWidth=2;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;exitX=1.0;exitY=0.7307692307692307;exitDx=0;exitDy=0;entryX=0.0;entryY=0.5;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="runtime-agent" target="runtime-bedrock-b">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="680" y="965" />
+              <mxPoint x="680" y="1030" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="model-request-direct-label" value="Direct model invocation" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=none;fontFamily=DejaVu Sans;fontSize=15;fontColor=#16806D;spacing=3;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="580" y="1055" width="210" height="26" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="04-Inference-Gateway-and-Bedrock" name="04 Inference Gateway and Bedrock">
+    <mxGraphModel dx="2400" dy="1660" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2400" pageHeight="1660" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Inference Gateway — API endpoint and cross-account callers" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#142D4E;fontFamily=DejaVu Sans;fontSize=30;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;spacing=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="22" width="2050" height="46" />
+        </mxCell>
+        <mxCell id="status" value="DRAFT v0.3 • CONFIDENTIAL&lt;br&gt;26 Oct 2026 • Guardian" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#A33A43;fontFamily=DejaVu Sans;fontSize=14;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;spacing=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="2090" y="25" width="270" height="40" />
+        </mxCell>
+        <mxCell id="rule" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#142D4E;strokeColor=#142D4E;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=17;spacing=12;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="84" width="2320" height="3" />
+        </mxCell>
+        <mxCell id="subtitle" value="Confirmed current-version routing • API-key authentication at the Control Plane API • Bedrock accessed in the account shown" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#53677C;fontFamily=DejaVu Sans;fontSize=17;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;spacing=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="100" width="2320" height="40" />
+        </mxCell>
+        <mxCell id="footer" value="GUARDIAN AI PLATFORM  |  Native AWS shapes and editable connectors  |  [P] = proposed / to confirm  |  4 / 4" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#53677C;fontFamily=DejaVu Sans;fontSize=14;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;spacing=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="1620" width="2320" height="26" />
+        </mxCell>
+        <mxCell id="caller-c" value="&lt;b&gt;AWS Account C&lt;/b&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#F2F7FC;strokeColor=#2374AB;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=24;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;verticalAlign=top;spacingTop=12;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="210" width="650" height="300" />
+        </mxCell>
+        <mxCell id="apps" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="caller-c">
+          <mxGeometry as="geometry" x="35" y="85" width="580" height="150" />
+        </mxCell>
+        <mxCell id="apps-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.client;fillColor=#5B6B7E;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="apps">
+          <mxGeometry as="geometry" x="12" y="41.0" width="68" height="68" />
+        </mxCell>
+        <mxCell id="apps-text" value="&lt;b&gt;Guardian apps&lt;/b&gt;&lt;br&gt;Applications / microservices&lt;br&gt;API key authentication" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=21;spacing=1;align=center;verticalAlign=middle;" vertex="1" parent="apps">
+          <mxGeometry as="geometry" x="95" y="5" width="480" height="140" />
+        </mxCell>
+        <mxCell id="caller-d" value="&lt;b&gt;AWS Account D&lt;/b&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#F6F2FC;strokeColor=#7B4AB0;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=24;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;verticalAlign=top;spacingTop=12;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="570" width="650" height="300" />
+        </mxCell>
+        <mxCell id="claude" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="caller-d">
+          <mxGeometry as="geometry" x="35" y="85" width="580" height="150" />
+        </mxCell>
+        <mxCell id="claude-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.client;fillColor=#5B6B7E;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="claude">
+          <mxGeometry as="geometry" x="12" y="41.0" width="68" height="68" />
+        </mxCell>
+        <mxCell id="claude-text" value="&lt;b&gt;Claude Code&lt;/b&gt;&lt;br&gt;Corporate client running in AWS&lt;br&gt;API key authentication" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=21;spacing=1;align=center;verticalAlign=middle;" vertex="1" parent="claude">
+          <mxGeometry as="geometry" x="95" y="5" width="480" height="140" />
+        </mxCell>
+        <mxCell id="shared-account-a" value="&lt;b&gt;AWS Account A — Control Plane platform and Bedrock model access&lt;/b&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#F8FBFF;strokeColor=#2374AB;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=23;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;verticalAlign=top;spacingTop=12;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="850" y="210" width="1510" height="660" />
+        </mxCell>
+        <mxCell id="api-repo" value="&lt;b&gt;Control Plane API repository&lt;/b&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#EDF4FC;strokeColor=#2374AB;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=22;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;verticalAlign=top;spacingTop=12;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="shared-account-a">
+          <mxGeometry as="geometry" x="40" y="75" width="750" height="525" />
+        </mxCell>
+        <mxCell id="api-host" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="api-repo">
+          <mxGeometry as="geometry" x="30" y="70" width="690" height="110" />
+        </mxCell>
+        <mxCell id="api-host-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.eks;fillColor=#ED7100;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="api-host">
+          <mxGeometry as="geometry" x="12" y="21.0" width="68" height="68" />
+        </mxCell>
+        <mxCell id="api-host-text" value="&lt;b&gt;Control Plane API containers&lt;/b&gt;&lt;br&gt;Kubernetes application deployment&lt;br&gt;Inference Gateway is part of the same API" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=21;spacing=1;align=center;verticalAlign=middle;" vertex="1" parent="api-host">
+          <mxGeometry as="geometry" x="95" y="5" width="590" height="100" />
+        </mxCell>
+        <mxCell id="gateway-api" value="&lt;b&gt;Inference Gateway endpoint&lt;/b&gt;&lt;br&gt;Validate caller API key&lt;br&gt;Route model request to Bedrock&lt;br&gt;Same API repository and deployment" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#E9F7F0;strokeColor=#16806D;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=22;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="api-repo">
+          <mxGeometry as="geometry" x="60" y="255" width="630" height="165" />
+        </mxCell>
+        <mxCell id="bedrock-a-group" value="&lt;b&gt;Amazon Bedrock • Account A&lt;/b&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#F0FAF4;strokeColor=#01A88D;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=21;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;verticalAlign=top;spacingTop=12;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="shared-account-a">
+          <mxGeometry as="geometry" x="930" y="75" width="540" height="525" />
+        </mxCell>
+        <mxCell id="a-models" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="bedrock-a-group">
+          <mxGeometry as="geometry" x="30" y="100" width="480" height="155" />
+        </mxCell>
+        <mxCell id="a-models-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.bedrock;fillColor=#01A88D;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="a-models">
+          <mxGeometry as="geometry" x="12" y="43.5" width="68" height="68" />
+        </mxCell>
+        <mxCell id="a-models-text" value="&lt;b&gt;Bedrock model endpoints&lt;/b&gt;&lt;br&gt;Accessed using Account A&lt;br&gt;AWS-managed model service" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=20;spacing=1;align=center;verticalAlign=middle;" vertex="1" parent="a-models">
+          <mxGeometry as="geometry" x="95" y="5" width="380" height="145" />
+        </mxCell>
+        <mxCell id="claude-models" value="&lt;b&gt;Claude models on Bedrock&lt;/b&gt;&lt;br&gt;Other approved Bedrock models" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#16806D;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=20;spacing=12;align=center;verticalAlign=middle;" vertex="1" parent="bedrock-a-group">
+          <mxGeometry as="geometry" x="40" y="325" width="460" height="120" />
+        </mxCell>
+        <mxCell id="account-a-note" value="Account C and D callers use the API endpoint; Bedrock model invocation occurs through the Control Plane API in Account A." style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#53677C;fontFamily=DejaVu Sans;fontSize=17;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;spacing=0;" vertex="1" parent="shared-account-a">
+          <mxGeometry as="geometry" x="40" y="615" width="1420" height="30" />
+        </mxCell>
+        <mxCell id="execution-b" value="&lt;b&gt;AWS Account B — independent Harness model path in the current version&lt;/b&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFFAEF;strokeColor=#C87524;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=22;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;verticalAlign=top;spacingTop=12;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="850" y="930" width="1510" height="280" />
+        </mxCell>
+        <mxCell id="b-harness" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="execution-b">
+          <mxGeometry as="geometry" x="50" y="85" width="560" height="130" />
+        </mxCell>
+        <mxCell id="b-harness-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.bedrock_agentcore;fillColor=#01A88D;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="b-harness">
+          <mxGeometry as="geometry" x="12" y="31.0" width="68" height="68" />
+        </mxCell>
+        <mxCell id="b-harness-text" value="&lt;b&gt;Harness agent&lt;/b&gt;&lt;br&gt;Execution-account workload&lt;br&gt;Direct model invocation" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=21;spacing=1;align=center;verticalAlign=middle;" vertex="1" parent="b-harness">
+          <mxGeometry as="geometry" x="95" y="5" width="460" height="120" />
+        </mxCell>
+        <mxCell id="b-bedrock" value="" style="group;html=1;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="execution-b">
+          <mxGeometry as="geometry" x="890" y="85" width="570" height="130" />
+        </mxCell>
+        <mxCell id="b-bedrock-icon" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.bedrock;fillColor=#01A88D;gradientColor=none;strokeColor=#FFFFFF;aspect=fixed;html=1;outlineConnect=0;" vertex="1" parent="b-bedrock">
+          <mxGeometry as="geometry" x="12" y="31.0" width="68" height="68" />
+        </mxCell>
+        <mxCell id="b-bedrock-text" value="&lt;b&gt;Amazon Bedrock — Account B&lt;/b&gt;&lt;br&gt;Model endpoints in the same account" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=20;spacing=1;align=center;verticalAlign=middle;" vertex="1" parent="b-bedrock">
+          <mxGeometry as="geometry" x="95" y="5" width="470" height="120" />
+        </mxCell>
+        <mxCell id="routing-notes" value="&lt;b&gt;Architecture boundaries&lt;/b&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FAFBFC;strokeColor=#AFBFCD;strokeWidth=1.5;fontColor=#21364D;fontFamily=DejaVu Sans;fontSize=22;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;verticalAlign=top;spacingTop=12;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="1280" width="2320" height="270" />
+        </mxCell>
+        <mxCell id="routing-notes-text" value="• Inference Gateway is an endpoint of the Control Plane API in Account A, built from the API Git repository.&lt;br&gt;• Guardian apps (Account C) and Claude Code (Account D) authenticate to this endpoint with API keys.&lt;br&gt;• The shared endpoint calls Bedrock in Account A, including Claude models available through Bedrock.&lt;br&gt;• Harness agents invoke Bedrock directly in their own Account B execution environment in this version.&lt;br&gt;• Existing Entra app/provider pairs, Control Plane invocation roles and Harness → ADOT → Arize telemetry are unchanged.&lt;br&gt;• Private connectivity, ingress routing and Bedrock invocation permissions still need implementation-level validation." style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=1.5;fontColor=#53677C;fontFamily=DejaVu Sans;fontSize=19;spacing=12;align=center;verticalAlign=middle;rounded=0;align=left;spacing=0;" vertex="1" parent="routing-notes">
+          <mxGeometry as="geometry" x="35" y="60" width="2250" height="170" />
+        </mxCell>
+        <mxCell id="apps-api-key" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#16806D;strokeWidth=2;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;exitX=1.0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.0;entryY=0.30303030303030304;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="apps" target="gateway-api">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="755" y="370" />
+              <mxPoint x="755" y="590" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="apps-api-key-label" value="HTTPS + API key" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=none;fontFamily=DejaVu Sans;fontSize=15;fontColor=#16806D;spacing=3;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="700" y="340" width="190" height="28" />
+        </mxCell>
+        <mxCell id="claude-api-key" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#16806D;strokeWidth=2;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;exitX=1.0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.0;entryY=0.6666666666666666;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="claude" target="gateway-api">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="785" y="730" />
+              <mxPoint x="785" y="650" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="claude-api-key-label" value="HTTPS + API key" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=none;fontFamily=DejaVu Sans;fontSize=15;fontColor=#16806D;spacing=3;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="700" y="747" width="190" height="28" />
+        </mxCell>
+        <mxCell id="endpoint-bedrock" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#16806D;strokeWidth=2;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;exitX=1.0;exitY=0.48484848484848486;exitDx=0;exitDy=0;entryX=0.0;entryY=0.4967741935483871;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="gateway-api" target="a-models">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="1700" y="620" />
+              <mxPoint x="1700" y="462" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="endpoint-bedrock-label" value="Invoke Bedrock" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=none;fontFamily=DejaVu Sans;fontSize=15;fontColor=#16806D;spacing=3;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1635" y="423" width="190" height="28" />
+        </mxCell>
+        <mxCell id="bedrock-models" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#16806D;strokeWidth=2;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;exitX=0.5;exitY=1.0;exitDx=0;exitDy=0;entryX=0.5;entryY=0.0;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="a-models" target="claude-models">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="harness-bedrock-local" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#16806D;strokeWidth=2;endArrow=block;endFill=1;jumpStyle=arc;jumpSize=8;exitX=1.0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.0;entryY=0.5;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="b-harness" target="b-bedrock">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="harness-bedrock-local-label" value="Same-account invocation" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=none;fontFamily=DejaVu Sans;fontSize=15;fontColor=#16806D;spacing=3;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1470" y="1040" width="260" height="30" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
